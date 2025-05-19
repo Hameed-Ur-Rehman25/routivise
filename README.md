@@ -11,7 +11,7 @@ A cross-platform mobile app built with Flutter (or FlutterFlow), designed to opt
 - 🍳 **Premium Cooking Area**: AI-suggested healthy recipes and meal plans (subscription required).
 - 🔒 **Secure Authentication**: Sign up/login via Firebase using email/password or Google.
 - 💳 **Subscription System**: Stripe or RevenueCat integration for premium content access.
-- 📱 **Responsive & Beautiful UI**: Built with Flutter (or FlutterFlow) with a smooth and intuitive user experience.
+- 📱 **Responsive & Beautiful UI**: Built with Flutter with a smooth and intuitive user experience.
 
 ---
 
@@ -35,11 +35,11 @@ A cross-platform mobile app built with Flutter (or FlutterFlow), designed to opt
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Flutter / FlutterFlow  
+- **Frontend**: Flutter 
 - **Backend**: Firebase (Auth, Firestore, Functions, Storage)  
 - **AI Integration**: OpenAI GPT-4 API  
-- **Payments & Subscriptions**: Stripe / RevenueCat  
-- **State Management**: (e.g., Provider / Riverpod / Bloc - depends on implementation)
+- **Payments & Subscriptions**: Stripe 
+- **State Management**: Riverpod 
 
 ---
 

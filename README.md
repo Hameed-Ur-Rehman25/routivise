@@ -1,6 +1,6 @@
 # 🧠 AI-Powered Customised Daily Routines App - Routivise
 
-A cross-platform mobile app built with Flutter (or FlutterFlow), designed to optimize daily productivity, fitness, and self-care routines using personalized AI-generated schedules. Powered by GPT-4, Firebase, and Stripe/RevenueCat, this app adapts to user behavior and preferences in real-time.
+A cross-platform mobile app built with Flutter, designed to optimize daily productivity, fitness, and self-care routines using personalized AI-generated schedules. Powered by GPT-4, Firebase, and Stripe, this app adapts to user behavior and preferences in real-time.
 
 ## 🚀 Features
 

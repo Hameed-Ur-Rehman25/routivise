@@ -46,6 +46,4 @@ A cross-platform mobile app built with Flutter (or FlutterFlow), designed to opt
 ## 🔧 Installation
 
 1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/ai-daily-routines-app.git
-   cd ai-daily-routines-app
+   

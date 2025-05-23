@@ -42,6 +42,7 @@ class GradientButton extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontSize: 21,
                 ),
               ),
             ),

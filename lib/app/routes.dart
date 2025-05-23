@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:routivise/features/dashboard/presentation/views/dashboard_screen.dart';
+import 'package:routivise/features/home/presentation/views/home_screen.dart';
 import 'package:routivise/features/onboarding/presentation/views/onboarding_screen_1.dart';
 import 'package:routivise/features/onboarding/presentation/views/onboarding_screen_2.dart';
 import 'package:routivise/features/onboarding/presentation/views/onboarding_screen_3.dart';

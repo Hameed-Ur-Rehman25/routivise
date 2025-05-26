@@ -10,10 +10,10 @@ class OnboardingScreen5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingScreen(
       onNext: () {
-        // TODO: Implement navigation to next step or home/quiz
+        Navigator.of(context).pushReplacementNamed('/quiz-splash');
       },
       onSkip: () {
-        Navigator.of(context).pushReplacementNamed('/quiz');
+        Navigator.of(context).pushReplacementNamed('/quiz-splash');
       },
       nextText: 'Take the Quiz',
       child: const OnboardingContent(

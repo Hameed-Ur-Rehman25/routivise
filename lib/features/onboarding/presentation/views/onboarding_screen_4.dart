@@ -14,7 +14,7 @@ class OnboardingScreen4 extends StatelessWidget {
         Navigator.of(context).pushReplacementNamed('/onboarding/5');
       },
       onSkip: () {
-        Navigator.of(context).pushReplacementNamed('/quiz');
+        Navigator.of(context).pushReplacementNamed('/quiz-splash');
       },
       child: const OnboardingContent(
         imagePath: 'assets/images/food.png',

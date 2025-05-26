@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: appTheme, // Ensures Poppins is the default font
-      initialRoute: AppRoutes.onboardingSplash,
+      initialRoute: AppRoutes.quizSplash,
       onGenerateRoute: AppRoutes.generateRoute,
     );
   }

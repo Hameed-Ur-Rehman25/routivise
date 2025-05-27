@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		ROrHzU86WA6y+rAX7hMzEOnofjA=
+		tyxkHVOCRqbL7ovUsZKcQkNvqPA=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		L7OWOyUutPb1Z5XmNk6u/OJOErA=
+		7vRk52usjg0S417WZd+dbaOhnuo=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
-		+H/5aftxuO9l3AkDZdiTG3PNk2U=
+		Td7u88XfiwLdwpZicrZKqQ+j8o0=
 		</data>
 		<key>flutter_assets/assets/fonts/Poppins/Poppins-Bold.ttf</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>flutter_assets/assets/images/.DS_Store</key>
 		<data>
-		YbYZgVfxL20Kq5J7ESEhJhJd2WQ=
+		L7ujpTM+nyhSblY8QXqbxerNZUE=
 		</data>
 		<key>flutter_assets/assets/images/Achieve.png</key>
 		<data>
@@ -63,6 +63,10 @@
 		<key>flutter_assets/assets/images/Fitness%20&amp;%20Nuitrition.png</key>
 		<data>
 		lL2wnwAEqo9kbKTD69oFSOB8UGo=
+		</data>
+		<key>flutter_assets/assets/images/Goals%20&amp;%20Motivation.png</key>
+		<data>
+		cJjag5FNLTglWZ/0omi9lEewhCQ=
 		</data>
 		<key>flutter_assets/assets/images/Work%20&amp;%20Life.png</key>
 		<data>
@@ -83,6 +87,14 @@
 		<key>flutter_assets/assets/images/quiz_splash_screen02_logo.textClipping</key>
 		<data>
 		f2shO+IFQmOR5p2iys3WgIfj3Nk=
+		</data>
+		<key>flutter_assets/assets/images/quiz_splash_screen2_logo.png</key>
+		<data>
+		drwfwWKk7FTV1gvjZbUc06B2jOQ=
+		</data>
+		<key>flutter_assets/assets/images/quiz_splash_screen3_logo.png</key>
+		<data>
+		Yd/eNrBFGw5R8caAEcjeSG6LMCw=
 		</data>
 		<key>flutter_assets/assets/images/quiz_splash_screen_logo.png</key>
 		<data>
@@ -114,7 +126,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		7McUkbvE0NIbFdiSTd+zhu5vNqk=
+		eFPiSZY0aOjxrtAyoFH+Znu3Jps=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -135,14 +147,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hGgv6OEntpsdjDBSFwzDO7XWj2jKYRrHb6W+GegjMp8=
+			SuOnivkxdIpyftRroWmktZkD/wHApsiskGr3jb54xUw=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W/X9hGugpe2JU+STENPIoGVP6v4iQFykRsNJ2Fm/iZ0=
+			B0070cfyTJOcYVC+fMqy/jIoDwGWKIojeWwCx2SMug8=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -215,6 +227,13 @@
 			zrAPjpgY+04ggzJF3pPEZY6V86GggetNVFyR9bocPYQ=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/Goals%20&amp;%20Motivation.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VHQMeoVdQfrDYb6LDAHz09Rg4NmlIJPjFqtSN3EVCyM=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/Work%20&amp;%20Life.png</key>
 		<dict>
 			<key>hash2</key>
@@ -248,6 +267,20 @@
 			<key>hash2</key>
 			<data>
 			BteX9EaHdni4nMorMwzC8FrK5S/idub0LQpHHEs9whM=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/quiz_splash_screen2_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1/hwl7uBjIbQY/ZxlqkDABY75Q/wyJwJFTLjr/gA/XI=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/quiz_splash_screen3_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/5hMe6FTD9fLN8/sWM78+EFRcDG/azZDrDLltzpahUk=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/quiz_splash_screen_logo.png</key>
@@ -303,7 +336,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KVYtlO9JrUalTSsQ/TkMh1JVT7Z/8bHXBlUd65K2Dss=
+			+sT+h/kEH/C/iP/IvWD3YoUKhAa83DrwqLPphHWh42s=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

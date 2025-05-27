@@ -16,6 +16,7 @@ import 'section1/quiz_screen_no_12.dart';
 import 'section1/quiz_screen_no_13.dart';
 import 'section1/quiz_screen_no_14.dart';
 import 'section1/quiz_screen_no_15.dart';
+import 'section2/quiz_splash_screen_02.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -91,6 +92,11 @@ class _QuizScreenState extends State<QuizScreen> {
       setState(() {
         _currentIndex++;
       });
+    } else {
+      // Navigate to section 2 splash screen when quiz 15 is done
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const QuizSplashScreen02()),
+      );
     }
     // Optionally handle quiz completion here
   }

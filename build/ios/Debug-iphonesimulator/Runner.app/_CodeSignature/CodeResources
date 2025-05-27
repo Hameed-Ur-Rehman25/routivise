@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		tcFoqxGtENbQ7ONsB1CmOC97/Ow=
+		d1dM9GbbByP9Pvy3EWyDUMRNrj4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		U3wVchcTzjUTNdsO2tvH4GD6sBk=
+		flabZPFq3EHT+KnuETLq69QLzd8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		ROrHzU86WA6y+rAX7hMzEOnofjA=
+		tyxkHVOCRqbL7ovUsZKcQkNvqPA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		L7OWOyUutPb1Z5XmNk6u/OJOErA=
+		7vRk52usjg0S417WZd+dbaOhnuo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -104,6 +104,10 @@
 		<data>
 		lL2wnwAEqo9kbKTD69oFSOB8UGo=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/Goals%20&amp;%20Motivation.png</key>
+		<data>
+		cJjag5FNLTglWZ/0omi9lEewhCQ=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/Work%20&amp;%20Life.png</key>
 		<data>
 		+p3wOyyx1i66VR8lrO6sqIGUNrU=
@@ -120,9 +124,13 @@
 		<data>
 		yPetDrrUvItCq5zjnCQVBfXlBc0=
 		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen02_logo.textClipping</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen2_logo.png</key>
 		<data>
-		f2shO+IFQmOR5p2iys3WgIfj3Nk=
+		drwfwWKk7FTV1gvjZbUc06B2jOQ=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen3_logo.png</key>
+		<data>
+		Yd/eNrBFGw5R8caAEcjeSG6LMCw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen_logo.png</key>
 		<data>
@@ -154,7 +162,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		7McUkbvE0NIbFdiSTd+zhu5vNqk=
+		eFPiSZY0aOjxrtAyoFH+Znu3Jps=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -345,7 +353,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+lDA972hrEolgSoG0foecs+4slL37IxtSeePnHd/WjM=
+			Hn7ksj+0h/yd75YGGi5hs1GO9/EWDUjRVd67YBU4W90=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -359,21 +367,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6HHLgAqRkIYwdle+S/GVN4xBhF9dS4gtJUHLudtd0hQ=
+			gCKqGuSurd2Vkbp8tMqYts96JMsP60S8ULP+epSNRng=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hGgv6OEntpsdjDBSFwzDO7XWj2jKYRrHb6W+GegjMp8=
+			SuOnivkxdIpyftRroWmktZkD/wHApsiskGr3jb54xUw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W/X9hGugpe2JU+STENPIoGVP6v4iQFykRsNJ2Fm/iZ0=
+			B0070cfyTJOcYVC+fMqy/jIoDwGWKIojeWwCx2SMug8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -446,6 +454,13 @@
 			zrAPjpgY+04ggzJF3pPEZY6V86GggetNVFyR9bocPYQ=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/Goals%20&amp;%20Motivation.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VHQMeoVdQfrDYb6LDAHz09Rg4NmlIJPjFqtSN3EVCyM=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/Work%20&amp;%20Life.png</key>
 		<dict>
 			<key>hash2</key>
@@ -474,11 +489,18 @@
 			Jgt+Hp22TFsCt7uG/vddZSdQCz2TrcE/yiyo908IxtA=
 			</data>
 		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen02_logo.textClipping</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen2_logo.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BteX9EaHdni4nMorMwzC8FrK5S/idub0LQpHHEs9whM=
+			1/hwl7uBjIbQY/ZxlqkDABY75Q/wyJwJFTLjr/gA/XI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen3_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/5hMe6FTD9fLN8/sWM78+EFRcDG/azZDrDLltzpahUk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen_logo.png</key>
@@ -534,7 +556,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KVYtlO9JrUalTSsQ/TkMh1JVT7Z/8bHXBlUd65K2Dss=
+			+sT+h/kEH/C/iP/IvWD3YoUKhAa83DrwqLPphHWh42s=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

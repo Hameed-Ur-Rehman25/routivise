@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:routivise/app/gradient_scaffold.dart';
+import 'package:routivise/core/widgets/gradient_scaffold.dart';
 
 class QuizCompletedScreen extends StatelessWidget {
   const QuizCompletedScreen({super.key});

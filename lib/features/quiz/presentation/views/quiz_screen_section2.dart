@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:routivise/app/gradient_scaffold.dart';
+import 'package:routivise/core/widgets/gradient_scaffold.dart';
 import 'package:routivise/features/quiz/presentation/widgets/custom_quiz_next_button.dart';
 import 'section2/quiz_screen_no_16.dart';
 import 'section2/quiz_screen_no_17.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:routivise/app/gradient_scaffold.dart';
+import 'package:routivise/core/widgets/gradient_scaffold.dart';
 import 'package:routivise/features/quiz/presentation/views/quiz_screen_section2.dart';
 
 class QuizSplashScreen02 extends StatefulWidget {

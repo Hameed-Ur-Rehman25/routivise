@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		4788kKrGSnduNXq5YuzcfoMD6zI=
+		uowl7dhzmNiZgGlo6f7EdOj4StU=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		+atRi1SAK0QlKGYh9B1Wa3WRhHs=
+		yfUSiiQKRtJ1AxhKwc4RRyE/6H0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		iHg2nrqjqpl+E8NxO4rAGZAXrCM=
+		jUvWFuL1EzvsrRQh57lYARmusEU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		lT6TsjKG6xkqZ2gJkoJd9jt679s=
+		5syF1/ai1Pkx4WZ19/pinj9Gpsc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		v1q4QVenzDr5UeiIIDEzFMonZks=
+		v76ZCH/ABTvz8OBuXI38mCQmUhc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
 		<data>
@@ -148,6 +148,14 @@
 		<data>
 		DquzNLh75WGtrNaWYA3sa6i+AAk=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/smile_emoji.png</key>
+		<data>
+		EUEh7vtDFL+S7lM2pXKpAFQIeP4=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/water_level.png</key>
+		<data>
+		zT475Qvjmckh9zied/PlwLh14sA=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/workout.png</key>
 		<data>
 		vMtSEsGMuphxZ4UwnbkbcQo12fI=
@@ -159,6 +167,10 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/svg%20images/Work-Life.svg</key>
 		<data>
 		UoQ3UqoscN1KcapL4HU9yMAgOQU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/svg%20images/notification_icon.svg</key>
+		<data>
+		Dng6R0BYNnXewLjbWyukj2CzO1U=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/svg%20images/quiz_splash_screen_logo.svg</key>
 		<data>
@@ -174,7 +186,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		nPRZujvXZF/ojsRAitWTlSkg5KY=
+		NFkzKdORLrq3RTxKAyDT7rfd/h8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -365,7 +377,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ity7WsElryjLeiApJeaR19EWShCxUxLBjk0f4ixj2nQ=
+			G3fJ5sDUrhhyu6Qd+4BKYb3UT75XKk0xs6ZB0zvwEAQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -379,21 +391,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dBQc2KwFsEr7nNZVFT8Y3uJbdl1+GTBekt+eL1jkZu0=
+			E80agn4Be71yCufQ48d7iMikfGSctk5zqcWzJkgSHsw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5a4soW8PM9W3AP/o5zfjA9IA0pi1u+6DwtdmwIegKBc=
+			fy2SyLbREzRAdCGFMIzk+SbO6EDBnf1Rjs2ql72KFvE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sm6oYGQSGqdd/PHkUnEpiCk46SMFVHVXTDOQDCuzHFU=
+			qJWwXTLP4UHtT8OdMQdfr2HBxaZ+aPqPjQS6bb5v/CU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -407,7 +419,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F9gLe2jBybZXUz5fgq4hxOmnPt+g1WmsPXz+5dvFqRQ=
+			N05kgyUHM2Y4w7wqP5dWBirIawUC9bUMHoX3T3wzw5Q=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
@@ -543,6 +555,20 @@
 			mrS90M/99AUFPznC6To9qPyMSxfJWARGtaMPDJCnJk0=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/smile_emoji.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PZG1XxjARtPPWXQMLynyzXHvNFKXGf0RcaTiWDWEYWA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/water_level.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			r00svKVKqCw14/ioaw9YoYypayMeIgG0ZHqt0Q1sQ2c=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/workout.png</key>
 		<dict>
 			<key>hash2</key>
@@ -562,6 +588,13 @@
 			<key>hash2</key>
 			<data>
 			FWnRcfnMFIL3weBv430evQgrXvp45v5BvpWG1GE0tD4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/svg%20images/notification_icon.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Zc6SzClA1kiPFL6o6EBYGeMDzxH4xa4b/Bt2+Jl7pZo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/svg%20images/quiz_splash_screen_logo.svg</key>
@@ -589,7 +622,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9BJrya5krhFpwJ3K0N9G7I9lf+DMqTNUMqSS4haGElY=
+			1yEOqyOLbbMdQAksDTEQbYWWF8h4+HMNbfbZ8FEsqAI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

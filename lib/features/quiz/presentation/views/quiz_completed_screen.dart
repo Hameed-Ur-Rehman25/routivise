@@ -42,7 +42,7 @@ class QuizCompletedScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigate to the home screen
-                Navigator.of(context).pushReplacementNamed('/home');
+                Navigator.of(context).pushReplacementNamed('/');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,

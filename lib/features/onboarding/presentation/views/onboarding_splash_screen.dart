@@ -19,7 +19,7 @@ class _OnboardingSplashScreenState extends State<OnboardingSplashScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 900),
+      duration: const Duration(milliseconds: 1200),
     );
     _fadeText = CurvedAnimation(
       parent: _controller,

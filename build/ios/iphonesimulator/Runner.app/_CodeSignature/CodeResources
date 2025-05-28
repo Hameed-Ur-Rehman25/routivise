@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		d1dM9GbbByP9Pvy3EWyDUMRNrj4=
+		4788kKrGSnduNXq5YuzcfoMD6zI=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		flabZPFq3EHT+KnuETLq69QLzd8=
+		+atRi1SAK0QlKGYh9B1Wa3WRhHs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		tyxkHVOCRqbL7ovUsZKcQkNvqPA=
+		iHg2nrqjqpl+E8NxO4rAGZAXrCM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		7vRk52usjg0S417WZd+dbaOhnuo=
+		lT6TsjKG6xkqZ2gJkoJd9jt679s=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -116,9 +116,17 @@
 		<data>
 		Z76ois/Cibm3UDfenWDfT9Ftaas=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/facebook_logo.png</key>
+		<data>
+		KgDiYhx3PiWJDgBMy0klDCm5/rs=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/food.png</key>
 		<data>
 		X5wtiDfPjjco6+kc99Vi9dwiI94=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/google_logo.png</key>
+		<data>
+		BewM+fvQ3LUvPgE3o+I/y9DZe+w=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/notepad.png</key>
 		<data>
@@ -135,6 +143,10 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/images/quiz_splash_screen_logo.png</key>
 		<data>
 		EW19CdXrAUqRItwi+4W4qJXBHt0=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/signup_logo.png</key>
+		<data>
+		DquzNLh75WGtrNaWYA3sa6i+AAk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/workout.png</key>
 		<data>
@@ -162,7 +174,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		eFPiSZY0aOjxrtAyoFH+Znu3Jps=
+		nPRZujvXZF/ojsRAitWTlSkg5KY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -353,7 +365,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Hn7ksj+0h/yd75YGGi5hs1GO9/EWDUjRVd67YBU4W90=
+			ity7WsElryjLeiApJeaR19EWShCxUxLBjk0f4ixj2nQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -367,21 +379,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gCKqGuSurd2Vkbp8tMqYts96JMsP60S8ULP+epSNRng=
+			dBQc2KwFsEr7nNZVFT8Y3uJbdl1+GTBekt+eL1jkZu0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SuOnivkxdIpyftRroWmktZkD/wHApsiskGr3jb54xUw=
+			5a4soW8PM9W3AP/o5zfjA9IA0pi1u+6DwtdmwIegKBc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B0070cfyTJOcYVC+fMqy/jIoDwGWKIojeWwCx2SMug8=
+			sm6oYGQSGqdd/PHkUnEpiCk46SMFVHVXTDOQDCuzHFU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -475,11 +487,25 @@
 			ulmb41dD5zNynaQS945fnSFcKB/FDQGQMHyNiyWrV3A=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/facebook_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KmVXkjL2PJBHyVIHwNdnhHniJD9DXQkh4x1r4Vk71as=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/food.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			QMsoyqVPNwm+UKQQThbjthyLhDmlq8qoX7kPM6gdJ6Q=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/google_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N7Nz+4poNTzh2IHARxbWy47yQChM/UJYHCA58QyWBIw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/notepad.png</key>
@@ -508,6 +534,13 @@
 			<key>hash2</key>
 			<data>
 			ejFf7HqkYMHTYE02kMm7G7yiQPigqYi6BzIDrV+lEf0=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/signup_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mrS90M/99AUFPznC6To9qPyMSxfJWARGtaMPDJCnJk0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/workout.png</key>
@@ -556,7 +589,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+sT+h/kEH/C/iP/IvWD3YoUKhAa83DrwqLPphHWh42s=
+			9BJrya5krhFpwJ3K0N9G7I9lf+DMqTNUMqSS4haGElY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

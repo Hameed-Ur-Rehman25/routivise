@@ -8,12 +8,16 @@ import 'package:routivise/features/onboarding/presentation/views/onboarding_scre
 import 'package:routivise/features/onboarding/presentation/views/onboarding_splash_screen.dart';
 import 'package:routivise/features/quiz/presentation/views/section1/quiz_splash_screen.dart';
 import 'package:routivise/features/quiz/presentation/views/quiz_completed_screen.dart';
+import 'package:routivise/features/auth/presentation/views/login_screen.dart';
+import 'package:routivise/features/auth/presentation/views/signup_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
 // Add imports for new screens as you implement them
 
 class AppRoutes {
   static const String splash = '/';
   static const String home = '/home';
+  static const String login = '/login';
+  static const String signup = '/signup';
   static const String onboardingSplash = '/onboarding/splash';
   static const String onboarding1 = '/onboarding/1';
   static const String onboarding2 = '/onboarding/2';
@@ -30,6 +34,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case login:
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case signup:
+        return MaterialPageRoute(builder: (_) => const SignupScreen());
       case onboardingSplash:
         return MaterialPageRoute(
           builder: (_) => const OnboardingSplashScreen(),

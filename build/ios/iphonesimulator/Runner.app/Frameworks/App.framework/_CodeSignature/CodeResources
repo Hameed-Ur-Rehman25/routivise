@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		tyxkHVOCRqbL7ovUsZKcQkNvqPA=
+		iHg2nrqjqpl+E8NxO4rAGZAXrCM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		7vRk52usjg0S417WZd+dbaOhnuo=
+		lT6TsjKG6xkqZ2gJkoJd9jt679s=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
-		Td7u88XfiwLdwpZicrZKqQ+j8o0=
+		BsuYe8y5JtjVmY+fNyt9d0Fr2Uo=
 		</data>
 		<key>flutter_assets/assets/fonts/Poppins/Poppins-Bold.ttf</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>flutter_assets/assets/images/.DS_Store</key>
 		<data>
-		L7ujpTM+nyhSblY8QXqbxerNZUE=
+		u/TvJLZiBZj1fu4FvReFTvaAYzM=
 		</data>
 		<key>flutter_assets/assets/images/Achieve.png</key>
 		<data>
@@ -76,17 +76,21 @@
 		<data>
 		Z76ois/Cibm3UDfenWDfT9Ftaas=
 		</data>
+		<key>flutter_assets/assets/images/facebook_logo.png</key>
+		<data>
+		KgDiYhx3PiWJDgBMy0klDCm5/rs=
+		</data>
 		<key>flutter_assets/assets/images/food.png</key>
 		<data>
 		X5wtiDfPjjco6+kc99Vi9dwiI94=
 		</data>
+		<key>flutter_assets/assets/images/google_logo.png</key>
+		<data>
+		BewM+fvQ3LUvPgE3o+I/y9DZe+w=
+		</data>
 		<key>flutter_assets/assets/images/notepad.png</key>
 		<data>
 		yPetDrrUvItCq5zjnCQVBfXlBc0=
-		</data>
-		<key>flutter_assets/assets/images/quiz_splash_screen02_logo.textClipping</key>
-		<data>
-		f2shO+IFQmOR5p2iys3WgIfj3Nk=
 		</data>
 		<key>flutter_assets/assets/images/quiz_splash_screen2_logo.png</key>
 		<data>
@@ -99,6 +103,10 @@
 		<key>flutter_assets/assets/images/quiz_splash_screen_logo.png</key>
 		<data>
 		EW19CdXrAUqRItwi+4W4qJXBHt0=
+		</data>
+		<key>flutter_assets/assets/images/signup_logo.png</key>
+		<data>
+		DquzNLh75WGtrNaWYA3sa6i+AAk=
 		</data>
 		<key>flutter_assets/assets/images/workout.png</key>
 		<data>
@@ -126,7 +134,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		eFPiSZY0aOjxrtAyoFH+Znu3Jps=
+		nPRZujvXZF/ojsRAitWTlSkg5KY=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -147,14 +155,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SuOnivkxdIpyftRroWmktZkD/wHApsiskGr3jb54xUw=
+			5a4soW8PM9W3AP/o5zfjA9IA0pi1u+6DwtdmwIegKBc=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B0070cfyTJOcYVC+fMqy/jIoDwGWKIojeWwCx2SMug8=
+			sm6oYGQSGqdd/PHkUnEpiCk46SMFVHVXTDOQDCuzHFU=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -248,6 +256,13 @@
 			ulmb41dD5zNynaQS945fnSFcKB/FDQGQMHyNiyWrV3A=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/facebook_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KmVXkjL2PJBHyVIHwNdnhHniJD9DXQkh4x1r4Vk71as=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/food.png</key>
 		<dict>
 			<key>hash2</key>
@@ -255,18 +270,18 @@
 			QMsoyqVPNwm+UKQQThbjthyLhDmlq8qoX7kPM6gdJ6Q=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/google_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N7Nz+4poNTzh2IHARxbWy47yQChM/UJYHCA58QyWBIw=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/notepad.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			Jgt+Hp22TFsCt7uG/vddZSdQCz2TrcE/yiyo908IxtA=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/quiz_splash_screen02_logo.textClipping</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			BteX9EaHdni4nMorMwzC8FrK5S/idub0LQpHHEs9whM=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/quiz_splash_screen2_logo.png</key>
@@ -288,6 +303,13 @@
 			<key>hash2</key>
 			<data>
 			ejFf7HqkYMHTYE02kMm7G7yiQPigqYi6BzIDrV+lEf0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/signup_logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mrS90M/99AUFPznC6To9qPyMSxfJWARGtaMPDJCnJk0=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/workout.png</key>
@@ -336,7 +358,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+sT+h/kEH/C/iP/IvWD3YoUKhAa83DrwqLPphHWh42s=
+			9BJrya5krhFpwJ3K0N9G7I9lf+DMqTNUMqSS4haGElY=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

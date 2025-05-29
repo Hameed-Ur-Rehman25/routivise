@@ -7,6 +7,7 @@ import 'package:routivise/features/mood_energy/presentation/providers/mood_provi
 import 'package:routivise/app/routes.dart';
 import 'package:routivise/features/home/presentation/widgets/status_container.dart';
 import 'package:routivise/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:routivise/features/home/presentation/widgets/routivise_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +36,19 @@ class _HomeScreenState extends State<HomeScreen> {
     });
 
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const RoutiviseDrawer(),
       body: Column(children: [_buildHeaderSection()]),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-          // TODO: Add navigation logic for each tab if needed
+          if (index == 4) {
+            _scaffoldKey.currentState?.openDrawer();
+          } else {
+            setState(() {
+              _selectedIndex = index;
+            });
+          }
         },
       ),
     );
@@ -109,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildMoodAndEnergyRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: [ 
         _buildMoodContainer(),
         const SizedBox(width: 20),
         _buildEnergyContainer(),

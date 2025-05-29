@@ -12,6 +12,8 @@ import 'package:routivise/features/auth/presentation/views/login_screen.dart';
 import 'package:routivise/features/auth/presentation/views/signup_screen.dart';
 import 'package:routivise/features/mood_energy/presentation/views/mood_detail_screen.dart';
 import 'package:routivise/features/mood_energy/presentation/views/energy_detail_screen.dart';
+import 'package:routivise/features/profile/presentation/views/profile_screen.dart';
+import 'package:routivise/features/profile/presentation/views/info_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
 // Add imports for new screens as you implement them
 
@@ -30,6 +32,8 @@ class AppRoutes {
   static const String quizCompleted = '/quiz-completed';
   static const String moodDetail = '/mood-detail';
   static const String energyDetail = '/energy-detail';
+  static const String profile = '/profile';
+  static const String info = '/info';
   // Add more route names as needed
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -64,6 +68,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const MoodDetailScreen());
       case energyDetail:
         return MaterialPageRoute(builder: (_) => const EnergyDetailScreen());
+      case profile:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case info:
+        return MaterialPageRoute(builder: (_) => const InfoScreen());
       // Add more cases for new routes/screens
       default:
         return MaterialPageRoute(

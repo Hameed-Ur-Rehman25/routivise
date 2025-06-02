@@ -12,28 +12,23 @@ class EnergyDetailScreen extends StatelessWidget {
     // Initialize the provider when the screen is loaded
     final energyProvider = Provider.of<EnergyProvider>(context, listen: false);
     const String userId = 'user-123';
-    
+
     // Fetch energy data
     WidgetsBinding.instance.addPostFrameCallback((_) {
       energyProvider.fetchCurrentEnergy(userId);
       energyProvider.fetchEnergyHistory(userId);
     });
-    
+
     return Scaffold(
       body: Column(
-        children: [
-          _buildHeader(context),
-          Expanded(
-            child: _buildContent(),
-          ),
-        ],
+        children: [_buildHeader(context), Expanded(child: _buildContent())],
       ),
     );
   }
 
   Widget _buildHeader(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40, bottom: 20),
+      padding: const EdgeInsets.only(top: 50, bottom: 20),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [AppColors.gradientStart, AppColors.gradientEnd],
@@ -45,14 +40,14 @@ class EnergyDetailScreen extends StatelessWidget {
         children: [
           // Back button and title
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back, color: Colors.white),
+                  icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 5),
                 const Text(
                   'Current Energy Levels',
                   style: AppStyles.headerMedium,
@@ -76,10 +71,7 @@ class EnergyDetailScreen extends StatelessWidget {
                 return const CircularProgressIndicator(color: Colors.white);
               }
               final energyPercentage = provider.currentEnergy?.percentage ?? 70;
-              return Text(
-                '$energyPercentage%',
-                style: AppStyles.headerLarge,
-              );
+              return Text('$energyPercentage%', style: AppStyles.headerLarge);
             },
           ),
         ],
@@ -96,47 +88,47 @@ class EnergyDetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Energy Meter',
-                style: AppStyles.sectionTitle,
-              ),
+              const Text('Energy Meter', style: AppStyles.sectionTitle),
               const SizedBox(height: 20),
               _buildSlider(),
               const SizedBox(height: 30),
               Center(
                 child: Builder(
-                  builder: (context) => ElevatedButton(
-                    onPressed: () {
-                      // Get the current slider value
-                      final provider = Provider.of<EnergyProvider>(context, listen: false);
-                      const String userId = 'user-123';
-                      
-                      // Simulate logging at 70% for now
-                      // In a real app, you'd get this from a slider or other input
-                      provider.logEnergy(70, userId).then((_) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Energy level logged successfully!'),
-                            backgroundColor: Colors.green,
+                  builder:
+                      (context) => ElevatedButton(
+                        onPressed: () {
+                          // Get the current slider value
+                          final provider = Provider.of<EnergyProvider>(
+                            context,
+                            listen: false,
+                          );
+                          const String userId = 'user-123';
+
+                          // Simulate logging at 70% for now
+                          // In a real app, you'd get this from a slider or other input
+                          provider.logEnergy(70, userId).then((_) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  'Energy level logged successfully!',
+                                ),
+                                backgroundColor: Colors.green,
+                              ),
+                            );
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
                           ),
-                        );
-                      });
-                    },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    minimumSize: const Size(200, 50),
-                  ),
-                    child: const Text(
-                      'Log Energy',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
+                          minimumSize: const Size(200, 50),
+                        ),
+                        child: const Text(
+                          'Log Energy',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
                       ),
-                    ),
-                  ),
                 ),
               ),
               const SizedBox(height: 30),
@@ -148,19 +140,19 @@ class EnergyDetailScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
               ),
-              const SizedBox(height: 15),
+
               Consumer<EnergyProvider>(
                 builder: (context, provider, _) {
                   if (provider.isLoading) {
                     return const Center(child: CircularProgressIndicator());
                   }
-                  
+
                   if (provider.energyHistory.isEmpty) {
                     return const Center(
                       child: Text('No energy data available'),
                     );
                   }
-                  
+
                   return ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -249,18 +241,12 @@ class EnergyDetailScreen extends StatelessWidget {
           const SizedBox(width: 20),
           Text(
             percentage,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const Spacer(),
           Text(
             timeRange,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey[600],
-            ),
+            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
           ),
         ],
       ),

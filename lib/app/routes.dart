@@ -15,7 +15,7 @@ import 'package:routivise/features/mood_energy/presentation/views/energy_detail_
 import 'package:routivise/features/profile/presentation/views/profile_screen.dart';
 import 'package:routivise/features/profile/presentation/views/info_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
-import 'package:routivise/features/subscribe/presentation/views/subscribe_screen.dart';
+import 'package:routivise/features/subscription/presentation/views/subscribe_screen.dart';
 // Add imports for new screens as you implement them
 
 class AppRoutes {

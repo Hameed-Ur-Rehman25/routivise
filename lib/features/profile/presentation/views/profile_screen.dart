@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:routivise/app/theme.dart';
+import 'package:routivise/features/preferences/presentation/views/preferences_screen.dart';
 import '../widgets/profile_widgets.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -221,7 +222,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SettingsTile(
                     icon: 'assets/icons/preferences.svg',
                     label: 'Preferences',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PreferencesScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

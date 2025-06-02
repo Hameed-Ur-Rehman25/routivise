@@ -12,28 +12,23 @@ class MoodDetailScreen extends StatelessWidget {
     // Initialize the provider when the screen is loaded
     final moodProvider = Provider.of<MoodProvider>(context, listen: false);
     const String userId = 'user-123';
-    
+
     // Fetch mood data
     WidgetsBinding.instance.addPostFrameCallback((_) {
       moodProvider.fetchCurrentMood(userId);
       moodProvider.fetchMoodHistory(userId);
     });
-    
+
     return Scaffold(
       body: Column(
-        children: [
-          _buildHeader(context),
-          Expanded(
-            child: _buildContent(),
-          ),
-        ],
+        children: [_buildHeader(context), Expanded(child: _buildContent())],
       ),
     );
   }
 
   Widget _buildHeader(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40, bottom: 20),
+      padding: const EdgeInsets.only(top: 50, bottom: 20),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [AppColors.gradientStart, AppColors.gradientEnd],
@@ -45,28 +40,21 @@ class MoodDetailScreen extends StatelessWidget {
         children: [
           // Back button and title
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back, color: Colors.white),
+                  icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
-                const SizedBox(width: 8),
-                const Text(
-                  'Current Mood',
-                  style: AppStyles.headerMedium,
-                ),
+                const SizedBox(width: 5),
+                const Text('Current Mood', style: AppStyles.headerMedium),
               ],
             ),
           ),
           const SizedBox(height: 20),
           // Mood emoji
-          Image.asset(
-            'assets/images/smile_emoji.png',
-            height: 100,
-            width: 100,
-          ),
+          Image.asset('assets/images/smile_emoji.png', height: 100, width: 100),
           const SizedBox(height: 10),
           // Current mood
           Consumer<MoodProvider>(
@@ -75,10 +63,7 @@ class MoodDetailScreen extends StatelessWidget {
                 return const CircularProgressIndicator(color: Colors.white);
               }
               final moodValue = provider.currentMood?.value ?? 'Happy';
-              return Text(
-                moodValue,
-                style: AppStyles.headerLarge,
-              );
+              return Text(moodValue, style: AppStyles.headerLarge);
             },
           ),
         ],
@@ -95,60 +80,62 @@ class MoodDetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Mood Meter',
-                style: AppStyles.sectionTitle,
-              ),
+              const Text('Mood Meter', style: AppStyles.sectionTitle),
               const SizedBox(height: 20),
               _buildMoodSlider(),
               const SizedBox(height: 30),
               Center(
                 child: Builder(
-                  builder: (context) => ElevatedButton(
-                    onPressed: () {
-                      final provider = Provider.of<MoodProvider>(context, listen: false);
-                      const String userId = 'user-123';
-                      
-                      // Simulate logging 'Happy' for now
-                      // In a real app, you'd get this from the mood selection
-                      provider.logMood('Happy', userId).then((_) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Mood logged successfully!'),
-                            backgroundColor: Colors.green,
-                          ),
-                        );
-                      });
-                    },
-                    style: AppStyles.primaryButtonStyle,
-                    child: const Text(
-                      'Log Mood',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
+                  builder:
+                      (context) => ElevatedButton(
+                        onPressed: () {
+                          final provider = Provider.of<MoodProvider>(
+                            context,
+                            listen: false,
+                          );
+                          const String userId = 'user-123';
+
+                          // Simulate logging 'Happy' for now
+                          // In a real app, you'd get this from the mood selection
+                          provider.logMood('Happy', userId).then((_) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Mood logged successfully!'),
+                                backgroundColor: Colors.green,
+                              ),
+                            );
+                          });
+                        },
+                        style: AppStyles.primaryButtonStyle,
+                        child: const Text(
+                          'Log Mood',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
                       ),
-                    ),
-                  ),
                 ),
               ),
               const SizedBox(height: 30),
-              const Text(
-                'Moods Today',
-                style: AppStyles.sectionTitle,
-              ),
-              const SizedBox(height: 15),
+              const Text('Moods Today', style: AppStyles.sectionTitle),
               Consumer<MoodProvider>(
                 builder: (context, provider, _) {
                   if (provider.isLoading) {
-                    return const Center(child: CircularProgressIndicator());
+                    return const Padding(
+                      padding: EdgeInsets.only(top: 5),
+                      child: SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                    );
                   }
-                  
+
                   if (provider.moodHistory.isEmpty) {
-                    return const Center(
+                    return const Padding(
+                      padding: EdgeInsets.only(top: 5),
                       child: Text('No mood data available'),
                     );
                   }
-                  
+
                   return ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -218,7 +205,9 @@ class MoodDetailScreen extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       child: Icon(
-        type == 'angry' ? Icons.sentiment_very_dissatisfied : Icons.sentiment_very_satisfied,
+        type == 'angry'
+            ? Icons.sentiment_very_dissatisfied
+            : Icons.sentiment_very_satisfied,
         color: Colors.white,
         size: size * 0.7,
       ),
@@ -231,26 +220,16 @@ class MoodDetailScreen extends StatelessWidget {
       decoration: AppStyles.cardDecoration,
       child: Row(
         children: [
-          Image.asset(
-            'assets/images/smile_emoji.png',
-            height: 40,
-            width: 40,
-          ),
+          Image.asset('assets/images/smile_emoji.png', height: 40, width: 40),
           const SizedBox(width: 20),
           Text(
             mood,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const Spacer(),
           Text(
             timeRange,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey[600],
-            ),
+            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
           ),
         ],
       ),

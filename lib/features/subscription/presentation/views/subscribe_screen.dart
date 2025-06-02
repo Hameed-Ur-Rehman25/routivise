@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:routivise/features/subscribe/presentation/animations/subscription_card_animation.dart';
-import 'package:routivise/features/subscribe/presentation/widgets/subscription_feature_list.dart';
+import 'package:routivise/features/subscription/presentation/animations/subscription_card_animation.dart';
+import 'package:routivise/features/subscription/presentation/widgets/subscription_feature_list.dart';
 
 class SubscribeScreen extends StatefulWidget {
   const SubscribeScreen({super.key});
@@ -10,38 +10,39 @@ class SubscribeScreen extends StatefulWidget {
   State<SubscribeScreen> createState() => _SubscribeScreenState();
 }
 
-class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderStateMixin {
+class _SubscribeScreenState extends State<SubscribeScreen>
+    with TickerProviderStateMixin {
   int expandedIndex = -1;
-  
+
   // Animation controllers for each subscription plan
   late AnimationController _premiumProAnimationController;
   late AnimationController _premiumAnimationController;
   late AnimationController _standardAnimationController;
-  
+
   @override
   void initState() {
     super.initState();
-    
+
     // Get animation duration from SubscriptionCardAnimation
     final animationDuration = SubscriptionCardAnimation.getAnimationDuration();
-    
+
     // Initialize animation controllers with the duration from repository
     _premiumProAnimationController = AnimationController(
       vsync: this,
       duration: animationDuration,
     );
-    
+
     _premiumAnimationController = AnimationController(
       vsync: this,
       duration: animationDuration,
     );
-    
+
     _standardAnimationController = AnimationController(
       vsync: this,
       duration: animationDuration,
     );
   }
-  
+
   @override
   void dispose() {
     _premiumProAnimationController.dispose();
@@ -66,12 +67,10 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-               
-    
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(flex: 2,),
+                    Spacer(flex: 2),
                     const Text(
                       'Subscribe Now!',
                       style: TextStyle(
@@ -82,10 +81,14 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                     ),
                     Spacer(),
                     IconButton(
-                    icon: const Icon(Icons.close, color: Colors.white, size: 28),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                  SizedBox(width: 5,)
+                      icon: const Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                    SizedBox(width: 5),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -98,16 +101,14 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                   ),
                 ),
                 const SizedBox(height: 24),
-                Image.asset(
-                  'assets/images/sub_screen_image.png',
-                  height: 120,
-                ),
+                Image.asset('assets/images/sub_screen_image.png', height: 120),
                 const SizedBox(height: 24),
                 _buildPlanCard(
                   index: 0,
                   title: 'Premium Pro',
                   price: 'USD 19.99',
-                  description: 'Unlock All our amazing features AI customizations to delicious recipes and meal plans',
+                  description:
+                      'Unlock All our amazing features AI customizations to delicious recipes and meal plans',
                   badge: 'Best Value',
                   badgeColor: const Color(0xFF26CB63),
                   icon: 'assets/svg images/flame.svg',
@@ -130,7 +131,8 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                   index: 1,
                   title: 'Premium',
                   price: 'USD 9.99',
-                  description: 'Unlock some of our great features including Basic Workouts and Unlimited AI routine generation!',
+                  description:
+                      'Unlock some of our great features including Basic Workouts and Unlimited AI routine generation!',
                   badge: 'Good Value',
                   badgeColor: const Color(0xFFFF9A0C),
                   icon: 'assets/svg images/diamond.svg',
@@ -152,7 +154,8 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                   index: 2,
                   title: 'Standard',
                   price: 'Free',
-                  description: 'Utilize our limited yet ample features in our standard package!',
+                  description:
+                      'Utilize our limited yet ample features in our standard package!',
                   badge: 'Basic',
                   badgeColor: const Color(0xFFE0E0E0),
                   icon: null,
@@ -184,7 +187,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
     required bool isPro,
   }) {
     final isExpanded = expandedIndex == index;
-    
+
     // Get the appropriate animation controller based on the index
     AnimationController animationController;
     if (index == 0) {
@@ -194,21 +197,23 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
     } else {
       animationController = _standardAnimationController;
     }
-    
+
     if (isExpanded && animationController.status != AnimationStatus.completed) {
       animationController.forward();
-    } else if (!isExpanded && animationController.status != AnimationStatus.dismissed) {
+    } else if (!isExpanded &&
+        animationController.status != AnimationStatus.dismissed) {
       animationController.reverse();
     }
-    
+
     return AnimatedBuilder(
       animation: animationController,
       builder: (context, child) {
         // Use our custom spring scale animation
-        final scale = isExpanded 
-            ? SubscriptionCardAnimation.getConfig().expandedScale 
-            : SubscriptionCardAnimation.getConfig().collapsedScale;
-        
+        final scale =
+            isExpanded
+                ? SubscriptionCardAnimation.getConfig().expandedScale
+                : SubscriptionCardAnimation.getConfig().collapsedScale;
+
         return Transform.scale(
           scale: scale + (animationController.value * 0.02),
           child: child,
@@ -222,12 +227,19 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: isPro ? const Color(0xFFFF9A0C) : (title == 'Premium' ? const Color(0xFF1987DA) : Colors.black),
+            color:
+                isPro
+                    ? const Color(0xFFFF9A0C)
+                    : (title == 'Premium'
+                        ? const Color(0xFF1987DA)
+                        : Colors.black),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05 + (animationController.value * 0.08)),
+              color: Colors.black.withOpacity(
+                0.05 + (animationController.value * 0.08),
+              ),
               blurRadius: 8 + (animationController.value * 6),
               spreadRadius: animationController.value * 2,
               offset: Offset(0, 4 - (animationController.value * 1)),
@@ -239,8 +251,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
           children: [
             Row(
               children: [
-                if (icon != null)
-                  SvgPicture.asset(icon, height: 28),
+                if (icon != null) SvgPicture.asset(icon, height: 28),
                 if (icon != null) const SizedBox(width: 8),
                 Text(
                   title,
@@ -252,9 +263,13 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                 ),
                 const Spacer(),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
-                    color: badge == 'Basic' ? const Color(0xFF444444) : badgeColor,
+                    color:
+                        badge == 'Basic' ? const Color(0xFF444444) : badgeColor,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
@@ -278,10 +293,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
               children: [
                 Text(
                   price,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                  ),
+                  style: const TextStyle(fontSize: 20, color: Colors.black),
                 ),
                 const Spacer(),
                 if (price != 'Free')
@@ -293,15 +305,30 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                         borderRadius: BorderRadius.circular(50),
                       ),
                       elevation: 2,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
+                      ),
                     ),
-                    child: const Text('Buy Now!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white)),
+                    child: const Text(
+                      'Buy Now!',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
               ],
             ),
             const SizedBox(height: 8),
             Divider(
-              color: isPro ? const Color(0xFFFF9A0C) : (title == 'Premium' ? const Color(0xFF1987DA) : Colors.black),
+              color:
+                  isPro
+                      ? const Color(0xFFFF9A0C)
+                      : (title == 'Premium'
+                          ? const Color(0xFF1987DA)
+                          : Colors.black),
               thickness: 1,
               height: 16,
             ),
@@ -315,16 +342,16 @@ class _SubscribeScreenState extends State<SubscribeScreen> with TickerProviderSt
                 children: [
                   const Text(
                     'Key features',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                   const Spacer(),
                   AnimatedRotation(
                     turns: isExpanded ? 0.5 : 0.0,
                     duration: const Duration(milliseconds: 200),
-                    child: const Icon(Icons.keyboard_arrow_down_rounded, size: 28),
+                    child: const Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      size: 28,
+                    ),
                   ),
                 ],
               ),

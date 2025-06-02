@@ -16,6 +16,8 @@ import 'package:routivise/features/profile/presentation/views/profile_screen.dar
 import 'package:routivise/features/profile/presentation/views/info_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
 import 'package:routivise/features/subscription/presentation/views/subscribe_screen.dart';
+import 'package:routivise/features/goals_todo/presentation/views/goals_screen.dart';
+import 'package:routivise/features/goals_todo/presentation/views/add_goal_screen.dart';
 // Add imports for new screens as you implement them
 
 class AppRoutes {
@@ -36,6 +38,8 @@ class AppRoutes {
   static const String profile = '/profile';
   static const String info = '/info';
   static const String subscribe = '/subscribe';
+  static const String goals = '/goals';
+  static const String addGoal = '/goals/add';
   // Add more route names as needed
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -76,6 +80,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const InfoScreen());
       case subscribe:
         return MaterialPageRoute(builder: (_) => const SubscribeScreen());
+      case goals:
+        return MaterialPageRoute(builder: (_) => const GoalsScreen());
+      case addGoal:
+        return MaterialPageRoute(builder: (_) => const AddGoalScreen());
       // Add more cases for new routes/screens
       default:
         return MaterialPageRoute(

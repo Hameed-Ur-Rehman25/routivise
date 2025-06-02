@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:routivise/app/routes.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/energy_provider.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/mood_provider.dart';
 import 'package:routivise/features/routines/domain/providers/routine_provider.dart';
@@ -78,6 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleNavigation(int index) {
     if (index == 4) {
       _scaffoldKey.currentState?.openDrawer();
+    } else if (index == 1) {
+      // Navigate to Goals screen when goals tab is clicked
+      Navigator.pushReplacementNamed(context, AppRoutes.goals);
     } else {
       setState(() => _selectedIndex = index);
     }

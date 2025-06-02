@@ -87,15 +87,10 @@ class RoutineCard extends StatelessWidget {
                       children: [
                         // Icon with background
                         Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: color.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
                           child:
                               icon is IconData
-                                  ? Icon(icon, color: color, size: 20)
-                                  : Image.asset(icon, width: 20, height: 20),
+                                  ? Icon(icon, color: color, size: 40)
+                                  : Image.asset(icon, height: 40),
                         ),
                         const SizedBox(width: 12),
                         // Title and time

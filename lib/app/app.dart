@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:routivise/app/routes.dart';
 import 'package:routivise/app/theme.dart';
 import 'package:routivise/features/auth/presentation/providers/auth_provider.dart';
+import 'package:routivise/features/goals_todo/presentation/di/goal_dependency_injector.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/energy_provider.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/mood_provider.dart';
 import 'package:routivise/features/routines/domain/providers/routine_provider.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MoodProvider()),
         ChangeNotifierProvider(create: (_) => EnergyProvider()),
         ChangeNotifierProvider(create: (_) => RoutineProvider()),
+        GoalDependencyInjector.getProvider(),
       ],
       child: MaterialApp(
         theme: appTheme, // Ensures Poppins is the default font

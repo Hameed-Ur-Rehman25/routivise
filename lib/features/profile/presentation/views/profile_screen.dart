@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:routivise/app/theme.dart';
-import 'package:routivise/core/widgets/gradient_scaffold.dart';
 import '../widgets/profile_widgets.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -214,7 +213,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SettingsTile(
                     icon: 'assets/icons/value.svg',
                     label: 'Subscription',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, '/subscribe');
+                    },
                   ),
                   ProfileDivider(),
                   SettingsTile(

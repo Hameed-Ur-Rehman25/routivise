@@ -15,6 +15,7 @@ import 'package:routivise/features/mood_energy/presentation/views/energy_detail_
 import 'package:routivise/features/profile/presentation/views/profile_screen.dart';
 import 'package:routivise/features/profile/presentation/views/info_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
+import 'package:routivise/features/subscribe/presentation/views/subscribe_screen.dart';
 // Add imports for new screens as you implement them
 
 class AppRoutes {
@@ -34,6 +35,7 @@ class AppRoutes {
   static const String energyDetail = '/energy-detail';
   static const String profile = '/profile';
   static const String info = '/info';
+  static const String subscribe = '/subscribe';
   // Add more route names as needed
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -72,6 +74,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case info:
         return MaterialPageRoute(builder: (_) => const InfoScreen());
+      case subscribe:
+        return MaterialPageRoute(builder: (_) => const SubscribeScreen());
       // Add more cases for new routes/screens
       default:
         return MaterialPageRoute(

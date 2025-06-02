@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:routivise/app/theme.dart';
 
 class RoutiviseDrawer extends StatelessWidget {
-  const RoutiviseDrawer({Key? key}) : super(key: key);
+  const RoutiviseDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +40,30 @@ class RoutiviseDrawer extends StatelessWidget {
             _drawerItem(
               iconAsset: 'assets/icons/smile.svg',
               label: 'Mood Logging',
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed('/mood-detail');
+              },
               isSvg: true,
             ),
             _drawerItem(
               iconAsset: 'assets/icons/thunder.svg',
               label: 'Energy Logging',
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed('/energy-detail');
+              },
               isSvg: true,
             ),
             _drawerItem(
               iconAsset: 'assets/icons/drawer.svg',
               label: 'Review Routines',
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                // You can create a route for this in the future
+                // For now, we'll just navigate to home
+                Navigator.of(context).pushNamed('/home');
+              },
               trailing: SvgPicture.asset(
                 'assets/icons/value.svg',
                 height: 16,
@@ -63,7 +74,10 @@ class RoutiviseDrawer extends StatelessWidget {
             _drawerItem(
               iconAsset: 'assets/icons/value.svg',
               label: 'Subscribe Now!',
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed('/subscribe');
+              },
               isSvg: true,
             ),
             const Spacer(),

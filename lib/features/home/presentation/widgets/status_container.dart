@@ -8,12 +8,12 @@ class StatusContainer extends StatelessWidget {
   final String routeName;
 
   const StatusContainer({
-    Key? key,
+    super.key,
     required this.title,
     required this.imagePath,
     required this.value,
     required this.routeName,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

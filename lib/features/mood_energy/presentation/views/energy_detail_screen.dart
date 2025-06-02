@@ -3,22 +3,37 @@ import 'package:provider/provider.dart';
 import 'package:routivise/app/theme.dart';
 import 'package:routivise/core/utils/date_time_helper.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/energy_provider.dart';
+import 'package:routivise/features/mood_energy/presentation/widgets/widgets.dart';
+import 'package:routivise/features/mood_energy/presentation/widgets/draggable_handle.dart';
 
-class EnergyDetailScreen extends StatelessWidget {
+class EnergyDetailScreen extends StatefulWidget {
   const EnergyDetailScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // Initialize the provider when the screen is loaded
-    final energyProvider = Provider.of<EnergyProvider>(context, listen: false);
-    const String userId = 'user-123';
+  State<EnergyDetailScreen> createState() => _EnergyDetailScreenState();
+}
 
-    // Fetch energy data
+class _EnergyDetailScreenState extends State<EnergyDetailScreen> {
+  double energyValue = 0.7; // Default to 70% energy
+  int energyPercentage = 70;
+  final String _userId = 'user-123'; // Added userId as a final member
+
+  @override
+  void initState() {
+    super.initState();
+    // Fetch initial data when the widget is first created
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      energyProvider.fetchCurrentEnergy(userId);
-      energyProvider.fetchEnergyHistory(userId);
+      final energyProvider = Provider.of<EnergyProvider>(
+        context,
+        listen: false,
+      );
+      energyProvider.fetchCurrentEnergy(_userId);
+      energyProvider.fetchEnergyHistory(_userId);
     });
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [_buildHeader(context), Expanded(child: _buildContent())],
@@ -27,55 +42,15 @@ class EnergyDetailScreen extends StatelessWidget {
   }
 
   Widget _buildHeader(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 50, bottom: 20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [AppColors.gradientStart, AppColors.gradientEnd],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-        ),
+    return DetailHeader(
+      title: 'Current Energy Levels',
+      icon: Image.asset(
+        'assets/images/water_level.png',
+        height: 100,
+        width: 100,
+        color: Colors.white,
       ),
-      child: Column(
-        children: [
-          // Back button and title
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-                  onPressed: () => Navigator.of(context).pop(),
-                ),
-                const SizedBox(width: 5),
-                const Text(
-                  'Current Energy Levels',
-                  style: AppStyles.headerMedium,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          // Energy icon
-          Image.asset(
-            'assets/images/water_level.png',
-            height: 100,
-            width: 100,
-            color: Colors.white,
-          ),
-          const SizedBox(height: 10),
-          // Current percentage
-          Consumer<EnergyProvider>(
-            builder: (context, provider, _) {
-              if (provider.isLoading) {
-                return const CircularProgressIndicator(color: Colors.white);
-              }
-              final energyPercentage = provider.currentEnergy?.percentage ?? 70;
-              return Text('$energyPercentage%', style: AppStyles.headerLarge);
-            },
-          ),
-        ],
-      ),
+      statusWidget: Text('$energyPercentage%', style: AppStyles.headerLarge),
     );
   }
 
@@ -96,17 +71,23 @@ class EnergyDetailScreen extends StatelessWidget {
                 child: Builder(
                   builder:
                       (context) => ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
+                          // Made onPressed async
                           // Get the current slider value
-                          final provider = Provider.of<EnergyProvider>(
+                          final energyProvider = Provider.of<EnergyProvider>(
+                            // Renamed for clarity
                             context,
                             listen: false,
                           );
-                          const String userId = 'user-123';
-
-                          // Simulate logging at 70% for now
-                          // In a real app, you'd get this from a slider or other input
-                          provider.logEnergy(70, userId).then((_) {
+                          // Use the _userId class member
+                          await energyProvider.logEnergy(
+                            energyPercentage,
+                            _userId,
+                          );
+                          // Fetch history again after logging
+                          await energyProvider.fetchEnergyHistory(_userId);
+                          if (mounted) {
+                            // Check if widget is still mounted
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text(
@@ -115,15 +96,9 @@ class EnergyDetailScreen extends StatelessWidget {
                                 backgroundColor: Colors.green,
                               ),
                             );
-                          });
+                          }
                         },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          minimumSize: const Size(200, 50),
-                        ),
+                        style: AppStyles.primaryButtonStyle,
                         child: const Text(
                           'Log Energy',
                           style: TextStyle(color: Colors.white, fontSize: 16),
@@ -132,19 +107,12 @@ class EnergyDetailScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              const Text(
-                'Energy Levels Today',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
+              const Text('Energy Levels Today', style: AppStyles.sectionTitle),
 
               Consumer<EnergyProvider>(
                 builder: (context, provider, _) {
                   if (provider.isLoading) {
-                    return const Center(child: CircularProgressIndicator());
+                    return const SizedBox.shrink();
                   }
 
                   if (provider.energyHistory.isEmpty) {
@@ -178,78 +146,47 @@ class EnergyDetailScreen extends StatelessWidget {
   }
 
   Widget _buildSlider() {
-    return Stack(
-      children: [
-        // Slider background
-        Container(
-          height: 20,
-          decoration: BoxDecoration(
-            color: Colors.blue.shade200,
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-        // Icons on the slider
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buildWaterIcon(Colors.blue.shade600, 40),
-            Column(
-              children: [
-                const SizedBox(height: 20),
-                _buildWaterIcon(Colors.blue.shade400, 30),
-              ],
-            ),
-            _buildWaterIcon(Colors.blue.shade300, 40),
-          ],
-        ),
+    return DraggableMeter(
+      initialValue: energyValue,
+      gradientColors: [
+        Colors.blue.shade600,
+        Colors.blue.shade400,
+        Colors.blue.shade300,
       ],
-    );
-  }
-
-  Widget _buildWaterIcon(Color color, double size) {
-    return Image.asset(
-      'assets/images/water_level.png',
-      height: size,
-      width: size,
-      color: color,
-    );
-  }
-
-  Widget _buildEnergyHistoryItem(String percentage, String timeRange) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            spreadRadius: 1,
-            blurRadius: 3,
-            offset: const Offset(0, 1),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Image.asset(
+      iconWidgets: [
+        EnergyIcon(color: Colors.blue.shade600, size: 40),
+        EnergyIcon(color: Colors.blue.shade300, size: 40),
+      ],
+      onValueChanged: (value) {
+        setState(() {
+          energyValue = value;
+          energyPercentage = (value * 100).round();
+        });
+      },
+      handleBuilder: (value) {
+        // You can customize the emoji or icon for the handle here
+        return DraggableHandle(
+          emoji: Image.asset(
             'assets/images/water_level.png',
             height: 40,
             width: 40,
             color: Colors.blue,
           ),
-          const SizedBox(width: 20),
-          Text(
-            percentage,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const Spacer(),
-          Text(
-            timeRange,
-            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-          ),
-        ],
+        );
+      },
+    );
+  }
+
+  Widget _buildEnergyHistoryItem(String percentage, String timeRange) {
+    return HistoryItem(
+      iconWidget: Image.asset(
+        'assets/images/water_level.png',
+        height: 40,
+        width: 40,
+        color: Colors.blue,
       ),
+      value: percentage,
+      timeRange: timeRange,
     );
   }
 }

@@ -3,22 +3,35 @@ import 'package:provider/provider.dart';
 import 'package:routivise/app/theme.dart';
 import 'package:routivise/core/utils/date_time_helper.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/mood_provider.dart';
+import 'package:routivise/features/mood_energy/presentation/widgets/widgets.dart';
+import 'package:routivise/features/mood_energy/presentation/widgets/draggable_handle.dart';
 
-class MoodDetailScreen extends StatelessWidget {
+class MoodDetailScreen extends StatefulWidget {
   const MoodDetailScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // Initialize the provider when the screen is loaded
-    final moodProvider = Provider.of<MoodProvider>(context, listen: false);
-    const String userId = 'user-123';
+  State<MoodDetailScreen> createState() => _MoodDetailScreenState();
+}
 
-    // Fetch mood data
+class _MoodDetailScreenState extends State<MoodDetailScreen> {
+  String selectedMood = 'Happy';
+  double moodValue =
+      0.6; // Default to happy (0.0 = angry, 0.5 = neutral, 1.0 = happy)
+  final String _userId = 'user-123'; // Added userId as a final member
+
+  @override
+  void initState() {
+    super.initState();
+    // Fetch initial data when the widget is first created
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      moodProvider.fetchCurrentMood(userId);
-      moodProvider.fetchMoodHistory(userId);
+      final moodProvider = Provider.of<MoodProvider>(context, listen: false);
+      moodProvider.fetchCurrentMood(_userId);
+      moodProvider.fetchMoodHistory(_userId);
     });
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [_buildHeader(context), Expanded(child: _buildContent())],
@@ -27,47 +40,21 @@ class MoodDetailScreen extends StatelessWidget {
   }
 
   Widget _buildHeader(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 50, bottom: 20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [AppColors.gradientStart, AppColors.gradientEnd],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-        ),
-      ),
-      child: Column(
-        children: [
-          // Back button and title
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-                  onPressed: () => Navigator.of(context).pop(),
-                ),
-                const SizedBox(width: 5),
-                const Text('Current Mood', style: AppStyles.headerMedium),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          // Mood emoji
-          Image.asset('assets/images/smile_emoji.png', height: 100, width: 100),
-          const SizedBox(height: 10),
-          // Current mood
-          Consumer<MoodProvider>(
-            builder: (context, provider, _) {
-              if (provider.isLoading) {
-                return const CircularProgressIndicator(color: Colors.white);
-              }
-              final moodValue = provider.currentMood?.value ?? 'Happy';
-              return Text(moodValue, style: AppStyles.headerLarge);
-            },
-          ),
-        ],
-      ),
+    // Different icon based on selected mood
+    Widget moodIcon;
+    if (selectedMood == 'Sad') {
+      moodIcon = const MoodIcon(type: 'angry', size: 100);
+    } else if (selectedMood == 'Neutral') {
+      moodIcon = const MoodIcon(type: 'neutral', size: 100);
+    } else {
+      moodIcon = const MoodIcon(type: 'happy', size: 100);
+    }
+
+    // Show the current mood based on the slider, not provider, for live update
+    return DetailHeader(
+      title: 'Current Mood',
+      icon: moodIcon,
+      statusWidget: Text(selectedMood, style: AppStyles.headerLarge),
     );
   }
 
@@ -82,36 +69,69 @@ class MoodDetailScreen extends StatelessWidget {
             children: [
               const Text('Mood Meter', style: AppStyles.sectionTitle),
               const SizedBox(height: 20),
-              _buildMoodSlider(),
+              DraggableMeter(
+                initialValue: moodValue,
+                gradientColors: [
+                  Colors.red.shade400,
+                  Colors.amber.shade400,
+                  Colors.green.shade400,
+                ],
+                iconWidgets: [
+                  const MoodIcon(type: 'angry', size: 40),
+                  const MoodIcon(type: 'happy', size: 40),
+                ],
+                onValueChanged: (value) {
+                  setState(() {
+                    moodValue = value;
+                    if (value < 0.33) {
+                      selectedMood = 'Sad';
+                    } else if (value < 0.66) {
+                      selectedMood = 'Neutral';
+                    } else {
+                      selectedMood = 'Happy';
+                    }
+                  });
+                },
+                handleBuilder: (value) {
+                  Widget emojiIcon;
+                  if (value < 0.33) {
+                    emojiIcon = const MoodIcon(type: 'angry', size: 40);
+                  } else if (value < 0.66) {
+                    emojiIcon = const MoodIcon(type: 'neutral', size: 40);
+                  } else {
+                    emojiIcon = const MoodIcon(type: 'happy', size: 40);
+                  }
+                  return DraggableHandle(emoji: emojiIcon);
+                },
+              ),
               const SizedBox(height: 30),
               Center(
-                child: Builder(
-                  builder:
-                      (context) => ElevatedButton(
-                        onPressed: () {
-                          final provider = Provider.of<MoodProvider>(
-                            context,
-                            listen: false,
-                          );
-                          const String userId = 'user-123';
-
-                          // Simulate logging 'Happy' for now
-                          // In a real app, you'd get this from the mood selection
-                          provider.logMood('Happy', userId).then((_) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Mood logged successfully!'),
-                                backgroundColor: Colors.green,
-                              ),
-                            );
-                          });
-                        },
-                        style: AppStyles.primaryButtonStyle,
-                        child: const Text(
-                          'Log Mood',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    final moodProvider = Provider.of<MoodProvider>(
+                      // Renamed for clarity
+                      context,
+                      listen: false,
+                    );
+                    // Use the _userId class member
+                    await moodProvider.logMood(selectedMood, _userId);
+                    // Fetch history again after logging
+                    await moodProvider.fetchMoodHistory(_userId);
+                    if (mounted) {
+                      // Check if widget is still mounted
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Mood logged successfully!'),
+                          backgroundColor: Colors.green,
                         ),
-                      ),
+                      );
+                    }
+                  },
+                  style: AppStyles.primaryButtonStyle,
+                  child: const Text(
+                    'Log Mood',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
@@ -119,23 +139,16 @@ class MoodDetailScreen extends StatelessWidget {
               Consumer<MoodProvider>(
                 builder: (context, provider, _) {
                   if (provider.isLoading) {
-                    return const Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: SizedBox(
-                        height: 20,
-                        width: 20,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
-                    );
+                    // Return an empty container or a placeholder if needed,
+                    // but not a CircularProgressIndicator.
+                    return const SizedBox.shrink();
                   }
-
                   if (provider.moodHistory.isEmpty) {
                     return const Padding(
                       padding: EdgeInsets.only(top: 5),
                       child: Text('No mood data available'),
                     );
                   }
-
                   return ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -159,80 +172,15 @@ class MoodDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMoodSlider() {
-    return Stack(
-      children: [
-        // Slider background (gradient from red to green)
-        Container(
-          height: 20,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.red.shade400,
-                Colors.amber.shade400,
-                Colors.green.shade400,
-              ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-        // Mood icons
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buildMoodIcon('angry', 40),
-            Column(
-              children: [
-                const SizedBox(height: 20),
-                _buildMoodIcon('happy', 30),
-              ],
-            ),
-            _buildMoodIcon('happy', 40),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildMoodIcon(String type, double size) {
-    return Container(
-      height: size,
-      width: size,
-      decoration: BoxDecoration(
-        color: type == 'angry' ? Colors.red.shade400 : Colors.amber.shade400,
-        shape: BoxShape.circle,
-      ),
-      child: Icon(
-        type == 'angry'
-            ? Icons.sentiment_very_dissatisfied
-            : Icons.sentiment_very_satisfied,
-        color: Colors.white,
-        size: size * 0.7,
-      ),
-    );
-  }
-
   Widget _buildMoodHistoryItem(String mood, String timeRange) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: AppStyles.cardDecoration,
-      child: Row(
-        children: [
-          Image.asset('assets/images/smile_emoji.png', height: 40, width: 40),
-          const SizedBox(width: 20),
-          Text(
-            mood,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const Spacer(),
-          Text(
-            timeRange,
-            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-          ),
-        ],
+    return HistoryItem(
+      iconWidget: Image.asset(
+        'assets/images/smile_emoji.png',
+        height: 40,
+        width: 40,
       ),
+      value: mood,
+      timeRange: timeRange,
     );
   }
 }

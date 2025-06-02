@@ -6,7 +6,7 @@ import '../utils/goal_colors.dart';
 import '../viewmodels/goal_viewmodel.dart';
 
 class AddGoalScreen extends StatefulWidget {
-  const AddGoalScreen({Key? key}) : super(key: key);
+  const AddGoalScreen({super.key});
 
   @override
   State<AddGoalScreen> createState() => _AddGoalScreenState();

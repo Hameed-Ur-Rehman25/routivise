@@ -29,6 +29,10 @@ class GoalViewModel extends ChangeNotifier {
   bool _isLoading = false;
   String? _error;
 
+  // State for filtered goals
+  List<Goal> _allGoals = [];
+  String? _activeFilter;
+
   // Getters
   List<Goal> get goals => _goals;
   bool get isLoading => _isLoading;
@@ -41,7 +45,15 @@ class GoalViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _goals = await _getGoalsUseCase.execute();
+      _allGoals = await _getGoalsUseCase.execute();
+
+      // Apply existing filter if there is one
+      if (_activeFilter != null) {
+        _applyFilter();
+      } else {
+        _goals = _allGoals;
+      }
+
       _isLoading = false;
       notifyListeners();
     } catch (e) {
@@ -84,9 +96,69 @@ class GoalViewModel extends ChangeNotifier {
     }
   }
 
-  // Get goals by type
-  List<Goal> getGoalsByType(String type) {
-    return _goals.where((goal) => goal.goalType == type).toList();
+  // Filter goals by type
+  void filterGoalsByType(String type) {
+    _activeFilter = type;
+    _applyFilter();
+  }
+
+  // Filter goals by date (today only)
+  void filterGoalsByToday() {
+    _activeFilter = 'today';
+    _applyFilter();
+  }
+
+  // Sort goals by duration left
+  void sortGoalsByDurationLeft() {
+    _activeFilter = 'duration';
+    _applyFilter();
+  }
+
+  // Clear all filters
+  void clearFilter() {
+    _activeFilter = null;
+    _goals = _allGoals;
+    notifyListeners();
+  }
+
+  // Apply the current active filter
+  void _applyFilter() {
+    if (_activeFilter == null) {
+      _goals = _allGoals;
+    } else if (_activeFilter == 'today') {
+      // Filter goals for today
+      final today = DateTime.now();
+      _goals =
+          _allGoals.where((goal) {
+            if (goal.date != null) {
+              return goal.date!.year == today.year &&
+                  goal.date!.month == today.month &&
+                  goal.date!.day == today.day;
+            } else {
+              return goal.time.year == today.year &&
+                  goal.time.month == today.month &&
+                  goal.time.day == today.day;
+            }
+          }).toList();
+    } else if (_activeFilter == 'duration') {
+      // Sort by time remaining
+      final now = DateTime.now();
+      _goals = List.from(_allGoals)..sort((a, b) {
+        final aDuration = a.time.difference(now).inMinutes;
+        final bDuration = b.time.difference(now).inMinutes;
+        return aDuration.compareTo(bDuration);
+      });
+    } else {
+      // Filter by goal type
+      _goals =
+          _allGoals
+              .where(
+                (goal) =>
+                    goal.goalType.toLowerCase() == _activeFilter!.toLowerCase(),
+              )
+              .toList();
+    }
+    notifyListeners();
   }
 
   // Clear error message

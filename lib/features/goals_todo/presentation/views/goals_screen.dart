@@ -10,7 +10,7 @@ import '../utils/goal_colors.dart';
 import '../viewmodels/goal_viewmodel.dart';
 
 class GoalsScreen extends StatefulWidget {
-  const GoalsScreen({Key? key}) : super(key: key);
+  const GoalsScreen({super.key});
 
   @override
   State<GoalsScreen> createState() => _GoalsScreenState();
@@ -108,20 +108,41 @@ class _GoalsScreenState extends State<GoalsScreen> {
             color: Colors.black,
           ),
         ),
-        OutlinedButton.icon(
-          onPressed: () {
-            // Add filter functionality
-          },
-          icon: const Icon(Icons.filter_list, size: 18),
-          label: const Text('Filter'),
-          style: OutlinedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
+        _buildFilterButton(),
+      ],
+    );
+  }
+
+  Widget _buildFilterButton() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            blurRadius: 5,
+            spreadRadius: 1,
+          ),
+        ],
+      ),
+      child: TextButton.icon(
+        onPressed: _showFilterOptions,
+        icon: Icon(Icons.filter_list, size: 18, color: Colors.indigo[400]),
+        label: Text(
+          'Filter',
+          style: TextStyle(
+            color: Colors.indigo[400],
+            fontWeight: FontWeight.w500,
           ),
         ),
-      ],
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+      ),
     );
   }
 
@@ -237,6 +258,136 @@ class _GoalsScreenState extends State<GoalsScreen> {
     } else if (index == 4) {
       // Open drawer
       _scaffoldKey.currentState?.openDrawer();
+    }
+  }
+
+  void _showFilterOptions() {
+    String? selectedFilter;
+
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return Container(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildFilterOption(
+                    'Duration Left (low to high)',
+                    selectedFilter,
+                    (value) {
+                      setState(() => selectedFilter = value);
+                    },
+                  ),
+                  _buildFilterOption('Today', selectedFilter, (value) {
+                    setState(() => selectedFilter = value);
+                  }),
+                  _buildFilterOption('Exercise', selectedFilter, (value) {
+                    setState(() => selectedFilter = value);
+                  }),
+                  _buildFilterOption('Meal', selectedFilter, (value) {
+                    setState(() => selectedFilter = value);
+                  }),
+                  _buildFilterOption('To-do list', selectedFilter, (value) {
+                    setState(() => selectedFilter = value);
+                  }),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    ).then((value) {
+      if (selectedFilter != null) {
+        _applyFilter(selectedFilter!);
+      }
+    });
+  }
+
+  Widget _buildFilterOption(
+    String title,
+    String? selectedFilter,
+    Function(String) onSelected,
+  ) {
+    return InkWell(
+      onTap: () {
+        onSelected(title);
+        Navigator.pop(context);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+        child: Row(
+          children: [
+            Container(
+              width: 24,
+              height: 24,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color:
+                      selectedFilter == title
+                          ? Colors.indigo
+                          : Colors.grey.shade400,
+                  width: 2,
+                ),
+              ),
+              child:
+                  selectedFilter == title
+                      ? const Center(
+                        child: CircleAvatar(
+                          radius: 8,
+                          backgroundColor: Colors.indigo,
+                        ),
+                      )
+                      : null,
+            ),
+            const SizedBox(width: 15),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight:
+                    selectedFilter == title
+                        ? FontWeight.w500
+                        : FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _applyFilter(String filterType) {
+    final viewModel = context.read<GoalViewModel>();
+
+    // Apply the appropriate filter based on selection
+    switch (filterType) {
+      case 'Duration Left (low to high)':
+        // Sort goals by time remaining
+        viewModel.sortGoalsByDurationLeft();
+        break;
+      case 'Today':
+        // Filter goals for today
+        viewModel.filterGoalsByToday();
+        break;
+      case 'Exercise':
+        // Filter goals by Exercise type
+        viewModel.filterGoalsByType('Exercise');
+        break;
+      case 'Meal':
+        // Filter goals by Meal type
+        viewModel.filterGoalsByType('Diet');
+        break;
+      case 'To-do list':
+        // Filter all goals (reset filter)
+        viewModel.clearFilter();
+        break;
     }
   }
 }

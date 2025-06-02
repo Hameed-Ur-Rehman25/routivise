@@ -19,7 +19,7 @@ class StatusContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 125,
-      padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
         color: AppColors.cardBackground,
         borderRadius: BorderRadius.circular(10),
@@ -29,10 +29,7 @@ class StatusContainer extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
           ),
           // const SizedBox(height: 5),
           Image.asset(
@@ -43,26 +40,21 @@ class StatusContainer extends StatelessWidget {
           // const SizedBox(height: 5),
           Text(
             value,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           ),
           // const SizedBox(height: 5),
           Builder(
-            builder: (context) => ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(routeName);
-              },
-              style: AppStyles.smallButtonStyle,
-              child: const Text(
-                'Change',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 11,
+            builder:
+                (context) => ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(routeName);
+                  },
+                  style: AppStyles.smallButtonStyle,
+                  child: const Text(
+                    'Change',
+                    style: TextStyle(color: Colors.white, fontSize: 11),
+                  ),
                 ),
-              ),
-            ),
           ),
         ],
       ),

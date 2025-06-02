@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:routivise/app/routes.dart';
-import 'package:routivise/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:routivise/core/widgets/routine_card.dart';
-import 'package:routivise/features/home/presentation/widgets/routivise_drawer.dart';
 
 import '../../domain/entities/goal.dart';
 import '../utils/goal_colors.dart';
 import '../viewmodels/goal_viewmodel.dart';
 
 class GoalsScreen extends StatefulWidget {
-  const GoalsScreen({super.key});
+  final bool showNavBar;
+
+  const GoalsScreen({super.key, this.showNavBar = true});
 
   @override
   State<GoalsScreen> createState() => _GoalsScreenState();
 }
 
 class _GoalsScreenState extends State<GoalsScreen> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   void initState() {
     super.initState();
@@ -30,42 +28,38 @@ class _GoalsScreenState extends State<GoalsScreen> {
     return GoalColors.getColorForGoalType(type);
   }
 
-  // Track current selected index for navigation
-  int _selectedIndex = 1; // 1 is for Goals tab
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      drawer: const RoutiviseDrawer(),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
-              const Text(
-                'Goals & To-do Lists',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
-                ),
+    // Content without scaffold - to be used in MainScreen
+    return SafeArea(
+      child: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Goals & To-do Lists',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  _buildAddGoalButton(context),
+                  const SizedBox(height: 20),
+                  _buildGoalsHeader(context),
+                  const SizedBox(height: 10),
+                  _buildGoalsList(context),
+                ],
               ),
-              const SizedBox(height: 20),
-              _buildAddGoalButton(context),
-              const SizedBox(height: 20),
-              _buildGoalsHeader(context),
-              const SizedBox(height: 10),
-              _buildGoalsList(context),
-            ],
+            ),
           ),
-        ),
-      ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: _selectedIndex,
-        onTap: _handleNavigation,
+        ],
       ),
     );
   }
@@ -230,35 +224,6 @@ class _GoalsScreenState extends State<GoalsScreen> {
       'Dec',
     ];
     return months[month - 1];
-  }
-
-  void _handleNavigation(int index) {
-    if (index == _selectedIndex) {
-      return;
-    }
-
-    if (index == 0) {
-      // Navigate to Home
-      Navigator.pushReplacementNamed(context, AppRoutes.home);
-    } else if (index == 1) {
-      // Already on Goals screen
-      setState(() => _selectedIndex = index);
-    } else if (index == 2) {
-      // Navigate to Exercise screen
-      // TODO: Replace with actual route when Exercise screen is implemented
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Exercise screen coming soon')),
-      );
-    } else if (index == 3) {
-      // Navigate to Food screen
-      // TODO: Replace with actual route when Food screen is implemented
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Food screen coming soon')));
-    } else if (index == 4) {
-      // Open drawer
-      _scaffoldKey.currentState?.openDrawer();
-    }
   }
 
   void _showFilterOptions() {

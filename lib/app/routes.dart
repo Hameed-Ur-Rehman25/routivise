@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:routivise/features/home/presentation/views/home_screen.dart';
+import 'package:routivise/core/screens/main_screen.dart';
 import 'package:routivise/features/onboarding/presentation/views/onboarding_screen_1.dart';
 import 'package:routivise/features/onboarding/presentation/views/onboarding_screen_2.dart';
 import 'package:routivise/features/onboarding/presentation/views/onboarding_screen_3.dart';
@@ -16,7 +16,6 @@ import 'package:routivise/features/profile/presentation/views/profile_screen.dar
 import 'package:routivise/features/profile/presentation/views/info_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
 import 'package:routivise/features/subscription/presentation/views/subscribe_screen.dart';
-import 'package:routivise/features/goals_todo/presentation/views/goals_screen.dart';
 import 'package:routivise/features/goals_todo/presentation/views/add_goal_screen.dart';
 // Add imports for new screens as you implement them
 
@@ -47,7 +46,9 @@ class AppRoutes {
       case splash:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case home:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => const MainScreen(initialTabIndex: 0),
+        );
       case login:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case signup:
@@ -81,7 +82,9 @@ class AppRoutes {
       case subscribe:
         return MaterialPageRoute(builder: (_) => const SubscribeScreen());
       case goals:
-        return MaterialPageRoute(builder: (_) => const GoalsScreen());
+        return MaterialPageRoute(
+          builder: (_) => const MainScreen(initialTabIndex: 1),
+        );
       case addGoal:
         return MaterialPageRoute(builder: (_) => const AddGoalScreen());
       // Add more cases for new routes/screens

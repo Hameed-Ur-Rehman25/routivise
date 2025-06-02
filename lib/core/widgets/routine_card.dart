@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:routivise/app/theme.dart';
 
 class RoutineCard extends StatelessWidget {
-  final IconData icon;
+  final dynamic icon; // Can be String (asset path) or IconData
   final String title;
   final String time;
   final String description;
@@ -10,10 +10,11 @@ class RoutineCard extends StatelessWidget {
   final VoidCallback? onTap;
   final VoidCallback? onDonePressed;
   final Color? accentColor;
+  final Color? leftcolor;
 
   const RoutineCard({
     super.key,
-    required this.icon,
+    required this.icon, // Updated type
     required this.title,
     required this.time,
     required this.description,
@@ -21,6 +22,7 @@ class RoutineCard extends StatelessWidget {
     this.onTap,
     this.onDonePressed,
     this.accentColor,
+    this.leftcolor,
   });
 
   @override
@@ -47,16 +49,27 @@ class RoutineCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         child: Row(
           children: [
-            // Left accent border
+            // Left colored section with accent border
             Container(
               width: 20,
-              height: double.infinity,
-
               decoration: BoxDecoration(
-                color: color,
+                color: leftcolor,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(12),
                   bottomLeft: Radius.circular(12),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 4),
+                child: Container(
+                  width: 4,
+                  decoration: BoxDecoration(
+                    color: leftcolor,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      bottomLeft: Radius.circular(12),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -79,7 +92,10 @@ class RoutineCard extends StatelessWidget {
                             color: color.withOpacity(0.1),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Icon(icon, color: color, size: 20),
+                          child:
+                              icon is IconData
+                                  ? Icon(icon, color: color, size: 20)
+                                  : Image.asset(icon, width: 20, height: 20),
                         ),
                         const SizedBox(width: 12),
                         // Title and time

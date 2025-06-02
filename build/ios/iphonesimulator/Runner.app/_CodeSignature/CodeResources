@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Ze57rZxvf2ArsMKW/8YiwwT1JT0=
+		8Vdykq+Pt8/yxL1k/Hm9S9JbfkA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		G9IG1R1jOwGZD3R4j7ixM3JvRgg=
+		EdDXKUffa/gWIsKsTmP/0vd93To=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		Z5hnRCm3qLQLmkg8v/7KKiUuog8=
+		W66GUfGCHM1SM7NWlDj5+IblWJU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		kZRFAqRIqBw+h8mgleh0BNIDDmA=
+		UDaUBPybnyg6epMnf51YGh+e/aQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -96,17 +96,57 @@
 		<data>
 		ikrOk5LQa8t/jqL1FpsH5MODqQ0=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Frame%2010%20(1).png</key>
+		<data>
+		UZk6M84nXgTej5zaKx5b3BfJvLY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Frame%2010%20(2).png</key>
+		<data>
+		Subi74M6AhXHEtz0Z0B14S18V8s=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Frame%2021.png</key>
+		<data>
+		9KeNiN7ehmUmpBa0kCRlwSkwohI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Rectangle%2019.png</key>
+		<data>
+		lSZk77rMnC79oaNsKPmBfXOlh80=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/assignment_icon.png</key>
+		<data>
+		evs3tEmJZ3OMeOZQ40+4ZYMsWTY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/breakfast-hot-drink-coffee_svgrepo.com.png</key>
+		<data>
+		43/4u6zTrd8Ci35XqnRD1Ri3Tds=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/diamond_icon.png</key>
+		<data>
+		J++QUXc5am0ga69iXAM8P6I4igY=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/drawer.svg</key>
 		<data>
 		EwnA8l3293nzxsu7Rr7ropUn2Lg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/drink-soda_svgrepo.com.png</key>
+		<data>
+		uSPDSUuV3aYnH8ZRQjM7AUwDF9I=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/dumbbell.svg</key>
 		<data>
 		c+bVlfmDAyjhbkri18yf4sITfl4=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/fluent_food-20-regular.png</key>
+		<data>
+		w11rMIBsONGZO7XF7ukQvgHXGSk=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/fork-and-spoon.svg</key>
 		<data>
 		iWPn9WFVEZNJaO77RJipr5hvdnI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/fried-chicken-lunch_svgrepo.com.png</key>
+		<data>
+		m2CS10L92d1+EmLaNsOZE9RF0vU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/help_support.svg</key>
 		<data>
@@ -115,6 +155,22 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/home.svg</key>
 		<data>
 		KZHT9oKzMin7eG6iZRhCcC5uanM=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/ingredients_svgrepo.com.png</key>
+		<data>
+		/iDB9w6uMYCUXWhY/VEBtQ/bQic=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/mdi_clock-outline.png</key>
+		<data>
+		Vku6vZiwa76cTm2ziGkCFMQ1PZ4=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/mdi_fire.png</key>
+		<data>
+		xppaTrHYoWqokphaT3BO24ZB3fY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/meal_icon.png</key>
+		<data>
+		E9/CyaLKeEnnFQHdo/uWycp+6Xo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/mission.svg</key>
 		<data>
@@ -136,9 +192,21 @@
 		<data>
 		c+PwzcY221hQMrbXwM/DvGlQM4A=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/refresh.png</key>
+		<data>
+		ufPFjYG3cbdk0WkaZ4neTMX9eFc=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/sandwich_svgrepo.com.png</key>
+		<data>
+		cRYllGch23X5L1uQcKUAjnB5HFk=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/smile.svg</key>
 		<data>
 		yYMsfLy5cxse5bvwaxYTQgwC9Q8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/spaghetti_svgrepo.com.png</key>
+		<data>
+		q3/3xY/46E0gy8PSSbBsfAZxLaM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/thunder.svg</key>
 		<data>
@@ -151,6 +219,14 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/value.svg</key>
 		<data>
 		d11t73ZjDkZ1fA6mknkP48YiDGA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/water_icon.png</key>
+		<data>
+		tRMZ2H1r2yuvlSrJTZUcyF9ktJA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/workout_icon.png</key>
+		<data>
+		1d18tJWFotfsSk60i2MhDToyPNo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/Achieve.png</key>
 		<data>
@@ -258,7 +334,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		CqQJvhy/kho7oaMkn+N4S0hBURk=
+		3wW5QICG1pk9KfecppW18Fl8uQ4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -449,7 +525,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2dZ78Iw2NDB61YGu9MEa7oXkMnYU2796ZsGB3wQaTyc=
+			U19usfv0HwN943se/U7XqrJzxn++d3SHlP0KHPNUO6I=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -463,21 +539,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8cj8fFqKZvkgqvRo4Z+8hkqc7OwS3gl/ecKyIWViKMw=
+			o9J8Mjw8iRtsnnjx+40CCFkd53J2hg8pBBJ4SkzRB70=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IzoNSbQQI4GxXnK5ImcGJO0nQBsz2cOBiVQsU3TI16E=
+			O++OrrzKiygmIsmzIvRlbd9tSWKQDE08KlKzMF6wFAU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q0r7Wi7ZiH+pqhGlEYEi8g+9dL8Hv3D3ol+1rYS5Ez4=
+			Kdn+w8iToP2E1saU1qYpuwTMiAcExFDo0fQchBUio4c=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -536,11 +612,67 @@
 			JIwCRLNQ7GiICZaqa+bXeWJ0tJmS1fy77+JRkGqk6jY=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Frame%2010%20(1).png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aHUjoqT1USvUJLP3D15TwkjqtPd0JIwdXJAl3NWtHmI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Frame%2010%20(2).png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			V7O3fZxXV12W2vjAwWr1uc8ST2vCK+LGs7xBq8UEvtE=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Frame%2021.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+FSyFGENe9DnNksyH724QM799BUzbS7mzoPzR9tNtTY=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/Rectangle%2019.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HSQaeuU8nJNowRP+coUUNGPXLw2uw+Y93mAhN8WVkEQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/assignment_icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DG+nxqESuBGdWVicrxmN31ZzeeYbsh//+su6QxIgQvo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/breakfast-hot-drink-coffee_svgrepo.com.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kRk+97o4stxvKafb0uLXIhHJqRuWouYydcLYu7/ChuE=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/diamond_icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0gp4gYqg3BbJohbyVeEBAufb7AYz/d+0WAlngi0G40Q=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/drawer.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			W/SGPdXzgMXjJo2aYnAiuDplyakuIInuDaMMIlQr/dI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/drink-soda_svgrepo.com.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IsZv8yH/3QMMnSWbMYgXPuZCT3nlunw+w5p2fLh5ebY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/dumbbell.svg</key>
@@ -550,11 +682,25 @@
 			Z/pYG8KkSNhMfZKfY1JB1Cp6h7DDw7fLBP963RJNEwM=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/fluent_food-20-regular.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			r2K6LT+28veCKqMLv/thpXYDpBFmBSuREkD1wtKLWz4=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/fork-and-spoon.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			7bVymGztJkBxWOy5QESgTnsS/zs3YLPB+HxJ8Eraass=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/fried-chicken-lunch_svgrepo.com.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wtvYKmTlzF6ypCNECFfgmG0KoMI7Fo775x0c1kuBBcw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/help_support.svg</key>
@@ -569,6 +715,34 @@
 			<key>hash2</key>
 			<data>
 			hFzKoIL4cBfvWrpCT2jRMJmPme5mbLAIma4zmrw5JQA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/ingredients_svgrepo.com.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pOCFjP+Pd7Bn8Iv0yIImfGXxM87ZaDKBAbRiW5ECcT4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/mdi_clock-outline.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lEh0XZAddTAFnFhDw/Uz1fTBAa2UVCgTUfwITH71yx4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/mdi_fire.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6f+FE0y4uDC4QCQSJ94CUHWVCDv8QZggU3c7Z0BbiqQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/meal_icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			e3ERGlGbxnLMDY7YriWhzTUvn6XflryDTbczAxqTX6s=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/mission.svg</key>
@@ -606,11 +780,32 @@
 			soGJ6BnRl7mJ2Z2wgcWoBR9zgZXZsYUtK6WW0hqq42M=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/refresh.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZqK/tkOJOqDSw7HeazUYH0boWystnR5Ofmhi5IiOHv4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/sandwich_svgrepo.com.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WSSmXNV2axNeWIQUDdaDXLzBEPwaKZL/bTHcRaoUdFw=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/smile.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			nX/32xsGweCJSlve393d4IKhS2iRhqlBEOuk6NbvkOs=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/spaghetti_svgrepo.com.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kphn7x+fuI7IjNgsc19Q/Af028UtyF66g6IXPfS+zqQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/thunder.svg</key>
@@ -632,6 +827,20 @@
 			<key>hash2</key>
 			<data>
 			J/Sd5YYDFCwIF9BhhLChop/jLv6xLMIjVRqqpReN3mQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/water_icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			69yhe7K0vXzpqjnEnGPNXaWR6yE/esEwpCJebqFgwQ8=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/workout_icon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KvyqeoTjDn/ynTxfUGGrvBniS/Kxw9HLemaYyPtO9rQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/Achieve.png</key>
@@ -820,7 +1029,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R0EhAzaAqGYT6UL5aBLpuGoPHSuez6L1vnmZUnwPf64=
+			KqQxBl6QBQWPdRPDlZ6EeQcN9H/ceMou0rdozpI38Xo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

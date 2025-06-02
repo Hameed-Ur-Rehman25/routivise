@@ -1,14 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:routivise/app/theme.dart';
 import 'package:routivise/core/widgets/routine_card.dart';
-import 'package:routivise/features/routines/domain/providers/routine_provider.dart';
 
 class TodaysRoutineSection extends StatelessWidget {
   const TodaysRoutineSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Static data for testing routines with icons and accent colors
+    final routinesData = [
+      {
+        'icon': 'assets/icons/assignment_icon.png',
+        'title': 'Study',
+        'time': '8:00 AM',
+        'description': 'Complete assignment',
+        'leftColor': AppColors.gradientStart,
+        'isDone': true,
+      },
+      {
+        'icon': 'assets/icons/meal_icon.png',
+        'title': 'Breakfast',
+        'time': '9:30 AM',
+        'description': 'Healthy meal',
+        'leftColor': AppColors.secondary,
+        'isDone': true,
+      },
+      {
+        'icon': 'assets/icons/workout_icon.png',
+        'title': 'Workout',
+        'time': '6:00 PM',
+        'description': 'Gym session',
+        'leftColor': Colors.red,
+        'isDone': true,
+      },
+      {
+        'icon': 'assets/icons/water_icon.png',
+        'title': 'Hydrate',
+        'time': '11:00 AM',
+        'description': 'Drink water',
+        'leftColor': Colors.blue,
+        'isDone': true,
+      },
+    ];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
@@ -31,13 +64,14 @@ class TodaysRoutineSection extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                   onPressed: () {
-                    final provider = Provider.of<RoutineProvider>(
-                      context,
-                      listen: false,
+                    // For static data, we could add an animation here
+                    // Later this will refresh data from RoutineProvider
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Refreshing routines...'),
+                        duration: Duration(seconds: 1),
+                      ),
                     );
-                    provider.refreshRoutines(
-                      'user-123',
-                    ); // Using temp userId for now
                   },
                   icon: Image.asset('assets/icons/refresh.png', height: 40),
                 ),
@@ -46,76 +80,26 @@ class TodaysRoutineSection extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Expanded(
-            child: Consumer<RoutineProvider>(
-              builder: (context, provider, _) {
-                if (provider.isLoading) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-
-                if (provider.routines.isEmpty) {
-                  return const Center(child: Text('No routines for today'));
-                }
-
-                return ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: provider.routines.length,
-                  itemBuilder: (context, index) {
-                    final routine = provider.routines[index];
-                    return _buildRoutineItem(
-                      context,
-                      icon: _getIconData(routine.icon),
-                      title: routine.title,
-                      time: routine.time,
-                      description: routine.description,
-                      isDone: routine.isDone,
-                      routineId: routine.id,
-                    );
-                  },
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              itemCount: routinesData.length,
+              itemBuilder: (context, index) {
+                final routine = routinesData[index];
+                return RoutineCard(
+                  icon: routine['icon'] as String,
+                  title: routine['title'] as String,
+                  time: routine['time'] as String,
+                  description: routine['description'] as String,
+                  isDone: routine['isDone'] as bool,
+                  onTap: () {},
+                  onDonePressed: () {},
+                  leftcolor: routine['leftColor'] as Color,
                 );
               },
             ),
           ),
         ],
       ),
-    );
-  }
-
-  IconData _getIconData(String icon) {
-    switch (icon) {
-      case 'water_drop':
-        return Icons.water_drop;
-      case 'fitness_center':
-        return Icons.fitness_center;
-      case 'restaurant':
-        return Icons.restaurant;
-      default:
-        return Icons.check_circle_outline;
-    }
-  }
-
-  Widget _buildRoutineItem(
-    BuildContext context, {
-    required IconData icon,
-    required String title,
-    required String time,
-    required String description,
-    required bool isDone,
-    required String routineId,
-  }) {
-    return RoutineCard(
-      icon: icon,
-      title: title,
-      time: time,
-      description: description,
-      isDone: isDone,
-      onTap: () {
-        // TODO: Implement routine item tap action
-      },
-      onDonePressed: () {
-        final provider = Provider.of<RoutineProvider>(context, listen: false);
-        provider.toggleRoutineStatus(routineId);
-      },
-      accentColor: isDone ? AppColors.gradientStart : Colors.blue,
     );
   }
 }

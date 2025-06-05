@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:routivise/features/home/presentation/views/home_screen.dart';
 import 'package:routivise/features/goals_todo/presentation/views/goals_screen.dart';
+import 'package:routivise/features/food/presentation/views/food_screen.dart';
 import 'package:routivise/features/home/presentation/widgets/routivise_drawer.dart';
 
 class MainScreen extends StatefulWidget {
   final int initialTabIndex;
 
-  const MainScreen({Key? key, this.initialTabIndex = 0}) : super(key: key);
+  const MainScreen({super.key, this.initialTabIndex = 0});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -31,8 +32,8 @@ class _MainScreenState extends State<MainScreen> {
       const GoalsScreen(showNavBar: false),
       // Placeholder for Exercise screen
       const Center(child: Text('Exercise Screen - Coming Soon')),
-      // Placeholder for Food screen
-      const Center(child: Text('Food Screen - Coming Soon')),
+      // Food screen
+      const FoodScreen(showNavBar: false),
     ];
   }
 

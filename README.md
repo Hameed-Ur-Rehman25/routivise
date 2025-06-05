@@ -17,33 +17,32 @@ A cross-platform mobile app built with Flutter, designed to optimize daily produ
 
 ## 📲 Pages Overview
 
-| Page                      | Description                                                                 |
-|---------------------------|-----------------------------------------------------------------------------|
-| **1. Splash Screen**       | Animated branding with gradient background. Transitions to onboarding/login. |
-| **2. Onboarding Flow**     | Collects user data: name, work hours, fitness level, goals, preferences.     |
-| **3. Authentication Page** | Firebase auth with secure password toggle and Google login.                 |
-| **4. Home Dashboard**      | AI-generated routine view with mood/energy sliders and regenerate button.   |
-| **5. Workout Planner**     | Personalized workout routines with check-off functionality.                 |
-| **6. Goals & To-Do Page**  | Manage and track personal goals and tasks integrated with the main routine. |
-| **7. Cooking Area**        | Premium recipes and meal plans (locked until subscription is active).       |
-| **8. Subscription Page**   | Plan details with Stripe or RevenueCat-based subscription options.          |
-| **9. Mood & Energy Page**  | Sliders and emojis to log current state affecting next-day routine.         |
-| **10. Profile/Settings**   | Manage preferences, account info, notifications, and subscriptions.         |
-| **11. Empty/Error States** | Friendly fallback screens for offline, empty, or error scenarios.           |
+| Page                       | Description                                                                               |
+| -------------------------- | ----------------------------------------------------------------------------------------- |
+| **1. Splash Screen**       | Animated branding with gradient background. Transitions to onboarding/login.              |
+| **2. Onboarding Flow**     | Collects user data: name, work hours, fitness level, goals, preferences.                  |
+| **3. Authentication Page** | Firebase auth with secure password toggle and Google login.                               |
+| **4. Home Dashboard**      | AI-generated routine view with mood/energy sliders and regenerate button.                 |
+| **5. Workout Planner**     | Personalized workout routines with check-off functionality.                               |
+| **6. Goals & To-Do Page**  | Manage and track personal goals and tasks integrated with the main routine.               |
+| **7. Food Screen**         | Browse meals by type, view detailed recipes, nutrition info, and AI-generated meal plans. |
+| **8. Subscription Page**   | Plan details with Stripe or RevenueCat-based subscription options.                        |
+| **9. Mood & Energy Page**  | Sliders and emojis to log current state affecting next-day routine.                       |
+| **10. Profile/Settings**   | Manage preferences, account info, notifications, and subscriptions.                       |
+| **11. Empty/Error States** | Friendly fallback screens for offline, empty, or error scenarios.                         |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Flutter 
-- **Backend**: Firebase (Auth, Firestore, Functions, Storage)  
-- **AI Integration**: OpenAI GPT-4 API  
-- **Payments & Subscriptions**: Stripe 
-- **State Management**: Riverpod 
+- **Frontend**: Flutter
+- **Backend**: Firebase (Auth, Firestore, Functions, Storage)
+- **AI Integration**: OpenAI GPT-4 API
+- **Payments & Subscriptions**: Stripe
+- **State Management**: Riverpod
 
 ---
 
 ## 🔧 Installation
 
 1. **Clone the Repository**
-   

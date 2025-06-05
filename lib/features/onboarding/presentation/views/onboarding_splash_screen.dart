@@ -19,7 +19,7 @@ class _OnboardingSplashScreenState extends State<OnboardingSplashScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 2500),
     );
     _fadeText = CurvedAnimation(
       parent: _controller,
@@ -50,17 +50,18 @@ class _OnboardingSplashScreenState extends State<OnboardingSplashScreen>
         child: AnimatedBuilder(
           animation: _controller,
           builder: (context, child) {
-            double opacity = _controller.value < 0.5
-                ? _fadeText.value
-                : 1.0 - _fadeOutText.value;
+            double opacity =
+                _controller.value < 0.5
+                    ? _fadeText.value
+                    : 1.0 - _fadeOutText.value;
             return Opacity(
               opacity: opacity,
               child: Text(
                 "Let's start!",
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             );
           },

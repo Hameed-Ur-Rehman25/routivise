@@ -2,24 +2,15 @@ import '../../domain/entities/goal.dart';
 
 class GoalModel extends Goal {
   GoalModel({
-    required String id,
-    required String title,
-    required String description,
-    required DateTime time,
-    required String goalType,
-    DateTime? date,
-    String? iconPath,
-    bool isDone = false,
-  }) : super(
-         id: id,
-         title: title,
-         description: description,
-         time: time,
-         goalType: goalType,
-         date: date,
-         iconPath: iconPath,
-         isDone: isDone,
-       );
+    required super.id,
+    required super.title,
+    required super.description,
+    required super.time,
+    required super.goalType,
+    super.date,
+    super.iconPath,
+    super.isDone,
+  });
 
   // Convert from Map (e.g., from a database or API)
   factory GoalModel.fromMap(Map<String, dynamic> map) {

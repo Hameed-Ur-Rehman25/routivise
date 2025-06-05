@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:routivise/app/theme.dart';
 
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({super.key});
@@ -37,7 +36,10 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.arrow_back_ios, color: Colors.black87),
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black87,
+                      ),
                       onPressed: () => Navigator.pop(context),
                     ),
                     const Text(
@@ -84,7 +86,12 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     buildDropdownField(
                       label: 'Workout type:',
                       value: workoutType,
-                      items: ['Exercise', 'Yoga', 'Cardio', 'Strength Training'],
+                      items: [
+                        'Exercise',
+                        'Yoga',
+                        'Cardio',
+                        'Strength Training',
+                      ],
                     ),
                     const SizedBox(height: 15),
 
@@ -92,7 +99,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     buildDropdownField(
                       label: 'Workout Duration:',
                       value: workoutDuration,
-                      items: ['11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm'],
+                      items: [
+                        '11:00 am',
+                        '12:00 pm',
+                        '1:00 pm',
+                        '2:00 pm',
+                        '3:00 pm',
+                      ],
                     ),
                     const SizedBox(height: 15),
 
@@ -100,7 +113,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     buildDropdownField(
                       label: 'Intensity level:',
                       value: intensityLevel,
-                      items: ['11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm'],
+                      items: [
+                        '11:00 am',
+                        '12:00 pm',
+                        '1:00 pm',
+                        '2:00 pm',
+                        '3:00 pm',
+                      ],
                     ),
                     const SizedBox(height: 24),
 
@@ -113,7 +132,6 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                         color: Colors.black,
                       ),
                     ),
-             
 
                     // Dietary Preferences Grid
                     Wrap(
@@ -191,30 +209,31 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
-              border: Border.all(
-                color: const Color(0xFFE8E8E8),
-                width: 1,
-              ),
+              border: Border.all(color: const Color(0xFFE8E8E8), width: 1),
             ),
             child: DropdownButtonFormField<String>(
               value: value,
               decoration: const InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 border: InputBorder.none,
                 isDense: true,
               ),
-              items: items.map((String item) {
-                return DropdownMenuItem(
-                  value: item,
-                  child: Text(
-                    item,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.black87,
-                    ),
-                  ),
-                );
-              }).toList(),
+              items:
+                  items.map((String item) {
+                    return DropdownMenuItem(
+                      value: item,
+                      child: Text(
+                        item,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    );
+                  }).toList(),
               onChanged: (value) {
                 if (value != null) {
                   setState(() {});

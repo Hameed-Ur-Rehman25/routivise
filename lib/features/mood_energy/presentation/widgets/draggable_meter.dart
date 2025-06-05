@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'draggable_handle.dart';
 
 class DraggableMeter extends StatefulWidget {
   final List<Color> gradientColors;

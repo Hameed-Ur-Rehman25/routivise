@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		W66GUfGCHM1SM7NWlDj5+IblWJU=
+		melPZaO1Smg2C9rGqKXCReA8BlM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		UDaUBPybnyg6epMnf51YGh+e/aQ=
+		nZgndZiTWFo6H+DQ87meEttyEaI=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
-		bFNIi0raGr2xkFFUrKu057zwWII=
+		ncBChqW7zt3U64v2WcQNaI4d1XY=
 		</data>
 		<key>flutter_assets/assets/fonts/Poppins/Poppins-Bold.ttf</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>flutter_assets/assets/icons/.DS_Store</key>
 		<data>
-		rlZIp4kTUkGp8fT5irepr5lrKmA=
+		MA/uVFKDu0p/mxdg/OenlwGy5Ek=
 		</data>
 		<key>flutter_assets/assets/icons/Frame%2010%20(1).png</key>
 		<data>
@@ -68,17 +68,9 @@
 		<data>
 		9KeNiN7ehmUmpBa0kCRlwSkwohI=
 		</data>
-		<key>flutter_assets/assets/icons/Rectangle%2019.png</key>
-		<data>
-		lSZk77rMnC79oaNsKPmBfXOlh80=
-		</data>
 		<key>flutter_assets/assets/icons/assignment_icon.png</key>
 		<data>
 		evs3tEmJZ3OMeOZQ40+4ZYMsWTY=
-		</data>
-		<key>flutter_assets/assets/icons/breakfast-hot-drink-coffee_svgrepo.com.png</key>
-		<data>
-		43/4u6zTrd8Ci35XqnRD1Ri3Tds=
 		</data>
 		<key>flutter_assets/assets/icons/diamond_icon.png</key>
 		<data>
@@ -88,10 +80,6 @@
 		<data>
 		EwnA8l3293nzxsu7Rr7ropUn2Lg=
 		</data>
-		<key>flutter_assets/assets/icons/drink-soda_svgrepo.com.png</key>
-		<data>
-		uSPDSUuV3aYnH8ZRQjM7AUwDF9I=
-		</data>
 		<key>flutter_assets/assets/icons/dumbbell.svg</key>
 		<data>
 		c+bVlfmDAyjhbkri18yf4sITfl4=
@@ -100,13 +88,13 @@
 		<data>
 		w11rMIBsONGZO7XF7ukQvgHXGSk=
 		</data>
+		<key>flutter_assets/assets/icons/food%20image.png</key>
+		<data>
+		lSZk77rMnC79oaNsKPmBfXOlh80=
+		</data>
 		<key>flutter_assets/assets/icons/fork-and-spoon.svg</key>
 		<data>
 		iWPn9WFVEZNJaO77RJipr5hvdnI=
-		</data>
-		<key>flutter_assets/assets/icons/fried-chicken-lunch_svgrepo.com.png</key>
-		<data>
-		m2CS10L92d1+EmLaNsOZE9RF0vU=
 		</data>
 		<key>flutter_assets/assets/icons/help_support.svg</key>
 		<data>
@@ -156,17 +144,9 @@
 		<data>
 		ufPFjYG3cbdk0WkaZ4neTMX9eFc=
 		</data>
-		<key>flutter_assets/assets/icons/sandwich_svgrepo.com.png</key>
-		<data>
-		cRYllGch23X5L1uQcKUAjnB5HFk=
-		</data>
 		<key>flutter_assets/assets/icons/smile.svg</key>
 		<data>
 		yYMsfLy5cxse5bvwaxYTQgwC9Q8=
-		</data>
-		<key>flutter_assets/assets/icons/spaghetti_svgrepo.com.png</key>
-		<data>
-		q3/3xY/46E0gy8PSSbBsfAZxLaM=
 		</data>
 		<key>flutter_assets/assets/icons/thunder.svg</key>
 		<data>
@@ -268,17 +248,37 @@
 		<data>
 		UMNn2RxddxpjS9fuhM1Kts2no1U=
 		</data>
+		<key>flutter_assets/assets/svg%20images/.DS_Store</key>
+		<data>
+		8861Qj6HRe0efpM5olAy6gpPECA=
+		</data>
+		<key>flutter_assets/assets/svg%20images/Dinner.svg</key>
+		<data>
+		sV7FBon9w/7NNxfHrlp9qDkghQE=
+		</data>
 		<key>flutter_assets/assets/svg%20images/Work-Life.svg</key>
 		<data>
 		UoQ3UqoscN1KcapL4HU9yMAgOQU=
+		</data>
+		<key>flutter_assets/assets/svg%20images/breakfast.svg</key>
+		<data>
+		o5Px0QKDSJveNwA04/vhH5PZPdw=
 		</data>
 		<key>flutter_assets/assets/svg%20images/diamond.svg</key>
 		<data>
 		Yy45ijAqnvQZMwpWEO6u9U9woQc=
 		</data>
+		<key>flutter_assets/assets/svg%20images/drinks.svg</key>
+		<data>
+		MeOG1KjYHg53y76N6tft3aYDmqM=
+		</data>
 		<key>flutter_assets/assets/svg%20images/flame.svg</key>
 		<data>
 		rBMOA3PCDRdsHoWloWDT4lucTGA=
+		</data>
+		<key>flutter_assets/assets/svg%20images/lunch.svg</key>
+		<data>
+		U/mej0lO4CNXq5hFjwHL6Q9x8hc=
 		</data>
 		<key>flutter_assets/assets/svg%20images/notification_icon.svg</key>
 		<data>
@@ -287,6 +287,10 @@
 		<key>flutter_assets/assets/svg%20images/quiz_splash_screen_logo.svg</key>
 		<data>
 		j9omChaYhY36qjycjZl2LqNWcug=
+		</data>
+		<key>flutter_assets/assets/svg%20images/snacks.svg</key>
+		<data>
+		ut1c8tYaznO5bhAclTdv8gMvMFk=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -298,7 +302,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		UlAxcXD2XdKdn3SF1M8kptjERrw=
+		ulCnvD43ByqNNJF7AqwFYKMtVJM=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -319,14 +323,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O++OrrzKiygmIsmzIvRlbd9tSWKQDE08KlKzMF6wFAU=
+			DQpJEnZ8JHfXaxQUJVl/yl7sYq+8FQt59IpiYDk9SbY=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kdn+w8iToP2E1saU1qYpuwTMiAcExFDo0fQchBUio4c=
+			99HjNVp4EOJw/zoCtskX1bWwkOZC+rr7GTZ6AMI3MnM=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -406,25 +410,11 @@
 			+FSyFGENe9DnNksyH724QM799BUzbS7mzoPzR9tNtTY=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/icons/Rectangle%2019.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			HSQaeuU8nJNowRP+coUUNGPXLw2uw+Y93mAhN8WVkEQ=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/icons/assignment_icon.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			DG+nxqESuBGdWVicrxmN31ZzeeYbsh//+su6QxIgQvo=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/icons/breakfast-hot-drink-coffee_svgrepo.com.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			kRk+97o4stxvKafb0uLXIhHJqRuWouYydcLYu7/ChuE=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/diamond_icon.png</key>
@@ -441,13 +431,6 @@
 			W/SGPdXzgMXjJo2aYnAiuDplyakuIInuDaMMIlQr/dI=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/icons/drink-soda_svgrepo.com.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			IsZv8yH/3QMMnSWbMYgXPuZCT3nlunw+w5p2fLh5ebY=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/icons/dumbbell.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -462,18 +445,18 @@
 			r2K6LT+28veCKqMLv/thpXYDpBFmBSuREkD1wtKLWz4=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/icons/food%20image.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HSQaeuU8nJNowRP+coUUNGPXLw2uw+Y93mAhN8WVkEQ=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/icons/fork-and-spoon.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			7bVymGztJkBxWOy5QESgTnsS/zs3YLPB+HxJ8Eraass=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/icons/fried-chicken-lunch_svgrepo.com.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wtvYKmTlzF6ypCNECFfgmG0KoMI7Fo775x0c1kuBBcw=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/help_support.svg</key>
@@ -560,25 +543,11 @@
 			ZqK/tkOJOqDSw7HeazUYH0boWystnR5Ofmhi5IiOHv4=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/icons/sandwich_svgrepo.com.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WSSmXNV2axNeWIQUDdaDXLzBEPwaKZL/bTHcRaoUdFw=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/icons/smile.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			nX/32xsGweCJSlve393d4IKhS2iRhqlBEOuk6NbvkOs=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/icons/spaghetti_svgrepo.com.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			kphn7x+fuI7IjNgsc19Q/Af028UtyF66g6IXPfS+zqQ=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/thunder.svg</key>
@@ -749,11 +718,25 @@
 			t+sw01w+IypFvaASqkHlZUgYQ4DVW++PziG+cj9+v+k=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/svg%20images/Dinner.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			F0mJmULsIq2ff7W6SAs6q1lVLlzaJ+b+Y24iiGjzWT4=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/svg%20images/Work-Life.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			FWnRcfnMFIL3weBv430evQgrXvp45v5BvpWG1GE0tD4=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/svg%20images/breakfast.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k4eqZ3WoA4w6uAWY0pikRwLBaVLssVW4Vdkz+WKyrfc=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/svg%20images/diamond.svg</key>
@@ -763,11 +746,25 @@
 			pAn0qjsov12CngW/SLMvth5hT1ozQEE3OVysSVOrdFQ=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/svg%20images/drinks.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ucXI6Utu/j9wt7XDIVZEyNf2YDaMTbBa3BBx+Xir7X0=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/svg%20images/flame.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			hlam396fSsd4islpPt/3uxthbdBDYH4+XiYX8BdSxAg=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/svg%20images/lunch.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xQwsWuEWkB8rRBdtMJ4zTIxzJ5ONs0um1MZyqF5LEQM=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/svg%20images/notification_icon.svg</key>
@@ -782,6 +779,13 @@
 			<key>hash2</key>
 			<data>
 			QKv9SALsdSwuEbml5uaYOzWphDjkm8UWaoeqjSusL0I=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/svg%20images/snacks.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ekyh6bjE5mfMmuYwg9VJpnf1L7FT1A9Cxv2i6gogl3E=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -802,7 +806,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q2KcuYErQYxSsYv2yQAb1m9ce6xWG/OG1TancNMbXOg=
+			0mu+IK2vOdqemb/ifQeCoetlBoR7b36IAOBmXYI8ks8=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 class SubscriptionFeatureList extends StatelessWidget {
   /// List of features to display
   final List<String> features;
-  
+
   /// Animation controller for animated effects
   final AnimationController animationController;
-  
+
   const SubscriptionFeatureList({
-    Key? key,
+    super.key,
     required this.features,
     required this.animationController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +22,7 @@ class SubscriptionFeatureList extends StatelessWidget {
         builder: (context, child) {
           return Align(
             heightFactor: animationController.value,
-            child: Opacity(
-              opacity: animationController.value,
-              child: child,
-            ),
+            child: Opacity(opacity: animationController.value, child: child),
           );
         },
         child: Padding(
@@ -37,7 +34,7 @@ class SubscriptionFeatureList extends StatelessWidget {
       ),
     );
   }
-  
+
   /// Builds individual feature item with check icon and text
   Widget _buildFeatureItem(String feature) {
     return Padding(
@@ -49,7 +46,7 @@ class SubscriptionFeatureList extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              feature, 
+              feature,
               style: const TextStyle(fontSize: 14, color: Colors.black),
             ),
           ),

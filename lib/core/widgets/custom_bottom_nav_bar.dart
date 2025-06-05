@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:routivise/app/theme.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -19,7 +18,11 @@ class CustomBottomNavBar extends StatelessWidget {
       onDestinationSelected: onTap,
       destinations: [
         NavigationDestination(
-          icon: SvgPicture.asset('assets/icons/home.svg', height: 24, color: Colors.black,),
+          icon: SvgPicture.asset(
+            'assets/icons/home.svg',
+            height: 24,
+            color: Colors.black,
+          ),
           label: 'Home',
         ),
         NavigationDestination(

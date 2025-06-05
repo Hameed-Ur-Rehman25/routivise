@@ -108,34 +108,14 @@ class _GoalsScreenState extends State<GoalsScreen> {
   }
 
   Widget _buildFilterButton() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            blurRadius: 5,
-            spreadRadius: 1,
-          ),
-        ],
-      ),
-      child: TextButton.icon(
-        onPressed: _showFilterOptions,
-        icon: Icon(Icons.filter_list, size: 18, color: Colors.indigo[400]),
-        label: Text(
-          'Filter',
-          style: TextStyle(
-            color: Colors.indigo[400],
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-        ),
+    return OutlinedButton.icon(
+      onPressed: _showFilterOptions,
+      icon: const Icon(Icons.tune, size: 18),
+      label: const Text('Filter'),
+      style: OutlinedButton.styleFrom(
+        foregroundColor: Colors.black87,
+        side: BorderSide(color: Colors.grey.shade300),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       ),
     );
   }
@@ -231,6 +211,8 @@ class _GoalsScreenState extends State<GoalsScreen> {
 
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -238,29 +220,120 @@ class _GoalsScreenState extends State<GoalsScreen> {
         return StatefulBuilder(
           builder: (context, setState) {
             return Container(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+              padding: const EdgeInsets.all(20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  _buildFilterOption(
-                    'Duration Left (low to high)',
-                    selectedFilter,
-                    (value) {
-                      setState(() => selectedFilter = value);
-                    },
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Filter By',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black54,
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.close, size: 24),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ],
                   ),
-                  _buildFilterOption('Today', selectedFilter, (value) {
-                    setState(() => selectedFilter = value);
-                  }),
-                  _buildFilterOption('Exercise', selectedFilter, (value) {
-                    setState(() => selectedFilter = value);
-                  }),
-                  _buildFilterOption('Meal', selectedFilter, (value) {
-                    setState(() => selectedFilter = value);
-                  }),
-                  _buildFilterOption('To-do list', selectedFilter, (value) {
-                    setState(() => selectedFilter = value);
-                  }),
+                  const SizedBox(height: 20),
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        _buildFilterOption(
+                          'Duration Left (low to high)',
+                          selectedFilter,
+                          (value) {
+                            setState(() => selectedFilter = value);
+                          },
+                        ),
+                        const Divider(height: 1),
+                        _buildFilterOption('Today', selectedFilter, (value) {
+                          setState(() => selectedFilter = value);
+                        }),
+                        const Divider(height: 1),
+                        _buildFilterOption('Exercise', selectedFilter, (value) {
+                          setState(() => selectedFilter = value);
+                        }),
+                        const Divider(height: 1),
+                        _buildFilterOption('Meal', selectedFilter, (value) {
+                          setState(() => selectedFilter = value);
+                        }),
+                        const Divider(height: 1),
+                        _buildFilterOption('To-do list', selectedFilter, (
+                          value,
+                        ) {
+                          setState(() => selectedFilter = value);
+                        }),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton(
+                          onPressed: () {
+                            setState(() => selectedFilter = null);
+                          },
+                          style: OutlinedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            side: BorderSide(color: Colors.grey.shade300),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          child: const Text(
+                            'Reset',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            if (selectedFilter != null) {
+                              _applyFilter(selectedFilter!);
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFEC534A),
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            elevation: 0,
+                          ),
+                          child: const Text(
+                            'Apply',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             );
@@ -279,13 +352,13 @@ class _GoalsScreenState extends State<GoalsScreen> {
     String? selectedFilter,
     Function(String) onSelected,
   ) {
+    final bool isSelected = selectedFilter == title;
     return InkWell(
       onTap: () {
         onSelected(title);
-        Navigator.pop(context);
       },
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(
           children: [
             Container(
@@ -295,31 +368,29 @@ class _GoalsScreenState extends State<GoalsScreen> {
                 shape: BoxShape.circle,
                 border: Border.all(
                   color:
-                      selectedFilter == title
-                          ? Colors.indigo
-                          : Colors.grey.shade400,
+                      isSelected
+                          ? const Color(0xFFEC534A)
+                          : Colors.grey.shade300,
                   width: 2,
                 ),
               ),
               child:
-                  selectedFilter == title
+                  isSelected
                       ? const Center(
                         child: CircleAvatar(
                           radius: 8,
-                          backgroundColor: Colors.indigo,
+                          backgroundColor: Color(0xFFEC534A),
                         ),
                       )
                       : null,
             ),
-            const SizedBox(width: 15),
+            const SizedBox(width: 16),
             Text(
               title,
               style: TextStyle(
                 fontSize: 16,
-                fontWeight:
-                    selectedFilter == title
-                        ? FontWeight.w500
-                        : FontWeight.normal,
+                fontWeight: isSelected ? FontWeight.w500 : FontWeight.normal,
+                color: isSelected ? Colors.black : Colors.black87,
               ),
             ),
           ],

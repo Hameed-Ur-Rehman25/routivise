@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:routivise/features/home/presentation/views/home_screen.dart';
 import 'package:routivise/features/goals_todo/presentation/views/goals_screen.dart';
 import 'package:routivise/features/food/presentation/views/food_screen.dart';
+import 'package:routivise/features/workout/presentation/views/workout_screen.dart';
 import 'package:routivise/features/home/presentation/widgets/routivise_drawer.dart';
 
 class MainScreen extends StatefulWidget {
@@ -30,8 +31,8 @@ class _MainScreenState extends State<MainScreen> {
     _pages = [
       const HomeScreen(showNavBar: false),
       const GoalsScreen(showNavBar: false),
-      // Placeholder for Exercise screen
-      const Center(child: Text('Exercise Screen - Coming Soon')),
+      // Exercise/Workout screen
+      const WorkoutScreen(showNavBar: false),
       // Food screen
       const FoodScreen(showNavBar: false),
     ];

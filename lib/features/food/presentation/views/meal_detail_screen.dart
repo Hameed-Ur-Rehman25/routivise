@@ -303,15 +303,15 @@ class _MealDetailScreenState extends State<MealDetailScreen>
                   Text(
                     quantity,
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade800,
+                      color: Colors.black54,
                     ),
                   ),
                   Text(
                     ingredient,
                     style: const TextStyle(
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

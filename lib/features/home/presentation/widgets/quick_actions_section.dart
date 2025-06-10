@@ -33,16 +33,15 @@ class QuickActionsSection extends StatelessWidget {
                     label: 'New Workout\nPlan',
                     iconColor: Color(0xFFFF9A0C),
                     onPressed: () {
-                      // TODO: Implement New Workout Plan navigation
+                      Navigator.of(context).pushNamed('/workout');
                     },
                   ),
                   _buildQuickActionButton(
                     iconPath: 'assets/icons/fork-and-spoon.svg',
                     iconColor: Color(0xFFFD4545),
-
                     label: 'Meal\nPlanning',
                     onPressed: () {
-                      // TODO: Implement Meal Planning navigation
+                      Navigator.of(context).pushNamed('/food');
                     },
                   ),
                   _buildQuickActionButton(

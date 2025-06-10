@@ -14,6 +14,7 @@ import 'package:routivise/features/mood_energy/presentation/views/mood_detail_sc
 import 'package:routivise/features/mood_energy/presentation/views/energy_detail_screen.dart';
 import 'package:routivise/features/profile/presentation/views/profile_screen.dart';
 import 'package:routivise/features/profile/presentation/views/info_screen.dart';
+import 'package:routivise/features/workout/presentation/views/workout_detail_screen.dart';
 import '../features/splash/presentation/views/splash_screen.dart';
 import 'package:routivise/features/subscription/presentation/views/subscribe_screen.dart';
 import 'package:routivise/features/goals_todo/presentation/views/add_goal_screen.dart';
@@ -42,6 +43,8 @@ class AppRoutes {
   static const String addGoal = '/goals/add';
   static const String food = '/food';
   static const String mealDetail = '/food/meal-detail';
+  static const String workout = '/workout';
+  static const String workoutDetail = '/workout/detail';
   // Add more route names as needed
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -98,6 +101,15 @@ class AppRoutes {
         final mealId = settings.arguments as String;
         return MaterialPageRoute(
           builder: (_) => MealDetailScreen(mealId: mealId),
+        );
+      case workout:
+        return MaterialPageRoute(
+          builder: (_) => const MainScreen(initialTabIndex: 2),
+        );
+      case workoutDetail:
+        final workoutId = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => WorkoutDetailScreen(workoutId: workoutId),
         );
       // Add more cases for new routes/screens
       default:

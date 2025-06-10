@@ -9,6 +9,7 @@ import 'package:routivise/features/food/presentation/di/meal_dependency_injector
 import 'package:routivise/features/mood_energy/presentation/providers/energy_provider.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/mood_provider.dart';
 import 'package:routivise/features/routines/domain/providers/routine_provider.dart';
+import 'package:routivise/features/workout/presentation/di/workout_dependency_injector.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => RoutineProvider()),
         GoalDependencyInjector.getProvider(),
         MealDependencyInjector.getProvider(),
+        WorkoutDependencyInjector.getProvider(),
       ],
       child: MaterialApp(
         theme: appTheme, // Ensures Poppins is the default font

@@ -1,7 +1,8 @@
+// filepath: /Users/pc/Desktop/routivise/lib/features/subscription/presentation/views/subscribe_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:routivise/features/subscription/presentation/animations/subscription_card_animation.dart';
-import 'package:routivise/features/subscription/presentation/widgets/subscription_feature_list.dart';
+import '../constants/subscription_constants.dart';
+import '../widgets/subscription_feature_list.dart';
 
 class SubscribeScreen extends StatefulWidget {
   const SubscribeScreen({super.key});
@@ -23,10 +24,9 @@ class _SubscribeScreenState extends State<SubscribeScreen>
   void initState() {
     super.initState();
 
-    // Get animation duration from SubscriptionCardAnimation
-    final animationDuration = SubscriptionCardAnimation.getAnimationDuration();
+    // Initialize animation controllers
+    final animationDuration = const Duration(milliseconds: 300);
 
-    // Initialize animation controllers with the duration from repository
     _premiumProAnimationController = AnimationController(
       vsync: this,
       duration: animationDuration,
@@ -57,7 +57,10 @@ class _SubscribeScreenState extends State<SubscribeScreen>
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF8B7AE9), Color(0xFF304D96)],
+            colors: [
+              Color(SubscriptionConstants.primaryPurpleStartValue),
+              Color(SubscriptionConstants.primaryPurpleEndValue),
+            ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
@@ -70,16 +73,16 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(flex: 2),
+                    const Spacer(flex: 2),
                     const Text(
-                      'Subscribe Now!',
+                      SubscriptionConstants.subscribeTitle,
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     IconButton(
                       icon: const Icon(
                         Icons.close,
@@ -88,14 +91,14 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                       ),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                   ],
                 ),
                 const SizedBox(height: 8),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.0),
                   child: Text(
-                    'Unlock all our incredible features to satisfy all your routine needs and much more!',
+                    SubscriptionConstants.subscribeSubtitle,
                     style: TextStyle(color: Colors.white, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
@@ -105,68 +108,91 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                 const SizedBox(height: 24),
                 _buildPlanCard(
                   index: 0,
-                  title: 'Premium Pro',
-                  price: 'USD 19.99',
-                  description:
-                      'Unlock All our amazing features AI customizations to delicious recipes and meal plans',
-                  badge: 'Best Value',
+                  title: SubscriptionConstants.premiumProLabel,
+                  price: SubscriptionConstants.premiumProPrice,
+                  description: SubscriptionConstants.premiumProDescription,
+                  badge: SubscriptionConstants.bestValueLabel,
                   badgeColor: const Color(0xFF26CB63),
                   icon: 'assets/svg images/flame.svg',
-                  features: [
-                    'Unlimited AI generated routines with adaptive feature and advanced personalization',
-                    'Mood & Energy Logging used for deep customization of routine',
-                    'To-do List & Short Term Goals with Smart Tracking and AI suggestions',
-                    'Custom AI workouts and progression tracking',
-                    'Premium Recipes and cooking plans',
-                    'Advanced Routine Customization and AI feedback',
-                    'Unlimited Review of Past Routines',
-                    'Smart Reminders based on habits',
-                    'Early Access to new features',
-                    'Priority Support',
-                  ],
+                  features: SubscriptionConstants.premiumProFeatures,
                   isPro: true,
                 ),
                 const SizedBox(height: 16),
                 _buildPlanCard(
                   index: 1,
-                  title: 'Premium',
-                  price: 'USD 9.99',
-                  description:
-                      'Unlock some of our great features including Basic Workouts and Unlimited AI routine generation!',
-                  badge: 'Good Value',
+                  title: SubscriptionConstants.premiumLabel,
+                  price: SubscriptionConstants.premiumPrice,
+                  description: SubscriptionConstants.premiumDescription,
+                  badge: SubscriptionConstants.goodValueLabel,
                   badgeColor: const Color(0xFFFF9A0C),
                   icon: 'assets/svg images/diamond.svg',
-                  features: [
-                    'Unlimited AI generated routines with adaptive feature',
-                    'Mood & Energy Logging used for routine adjustment',
-                    'To-do List & Short Term Goals with Smart Tracking',
-                    'Basic AI Workouts',
-                    'Basic Routine Customization',
-                    'Review Past Routines up to 7 days',
-                    'Motivational Reminders',
-                    'Priority Routine Access',
-                    'Faster Email Support',
-                  ],
+                  features: SubscriptionConstants.premiumFeatures,
                   isPro: false,
                 ),
                 const SizedBox(height: 16),
                 _buildPlanCard(
                   index: 2,
-                  title: 'Standard',
-                  price: 'Free',
-                  description:
-                      'Utilize our limited yet ample features in our standard package!',
-                  badge: 'Basic',
+                  title: SubscriptionConstants.standardLabel,
+                  price: SubscriptionConstants.standardPrice,
+                  description: SubscriptionConstants.standardDescription,
+                  badge: SubscriptionConstants.basicLabel,
                   badgeColor: const Color(0xFFE0E0E0),
                   icon: null,
-                  features: [
-                    '1 AI generated routine per day',
-                    'Mood & Energy Logging',
-                    'To-do List & Short Term Goals',
-                  ],
+                  features: SubscriptionConstants.standardFeatures,
                   isPro: false,
                 ),
                 const SizedBox(height: 32),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // Continue button action
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            foregroundColor: const Color(
+                              SubscriptionConstants.primaryPurpleEndValue,
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: const Text(
+                            SubscriptionConstants.continueLabel,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Text(
+                          SubscriptionConstants.skipForNowLabel,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        SubscriptionConstants.termsPrivacyLabel,
+                        style: TextStyle(color: Colors.white70, fontSize: 12),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -208,11 +234,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
     return AnimatedBuilder(
       animation: animationController,
       builder: (context, child) {
-        // Use our custom spring scale animation
-        final scale =
-            isExpanded
-                ? SubscriptionCardAnimation.getConfig().expandedScale
-                : SubscriptionCardAnimation.getConfig().collapsedScale;
+        final scale = isExpanded ? 1.02 : 1.0;
 
         return Transform.scale(
           scale: scale + (animationController.value * 0.02),
@@ -230,7 +252,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
             color:
                 isPro
                     ? const Color(0xFFFF9A0C)
-                    : (title == 'Premium'
+                    : (title == SubscriptionConstants.premiumLabel
                         ? const Color(0xFF1987DA)
                         : Colors.black),
             width: 2,
@@ -269,7 +291,9 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                   ),
                   decoration: BoxDecoration(
                     color:
-                        badge == 'Basic' ? const Color(0xFF444444) : badgeColor,
+                        badge == SubscriptionConstants.basicLabel
+                            ? const Color(0xFF444444)
+                            : badgeColor,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
@@ -296,11 +320,13 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                   style: const TextStyle(fontSize: 20, color: Colors.black),
                 ),
                 const Spacer(),
-                if (price != 'Free')
+                if (price != SubscriptionConstants.standardPrice)
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFEF2424),
+                      backgroundColor: const Color(
+                        SubscriptionConstants.buyNowButtonColorValue,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
@@ -311,7 +337,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                       ),
                     ),
                     child: const Text(
-                      'Buy Now!',
+                      SubscriptionConstants.buyNowLabel,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -326,7 +352,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
               color:
                   isPro
                       ? const Color(0xFFFF9A0C)
-                      : (title == 'Premium'
+                      : (title == SubscriptionConstants.premiumLabel
                           ? const Color(0xFF1987DA)
                           : Colors.black),
               thickness: 1,
@@ -341,7 +367,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
               child: Row(
                 children: [
                   const Text(
-                    'Key features',
+                    SubscriptionConstants.keyFeaturesLabel,
                     style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                   const Spacer(),

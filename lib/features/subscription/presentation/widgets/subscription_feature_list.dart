@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Widget to display the feature list in subscription cards
+/// Widget to display an animated list of subscription features
 class SubscriptionFeatureList extends StatelessWidget {
   /// List of features to display
   final List<String> features;
@@ -13,27 +13,6 @@ class SubscriptionFeatureList extends StatelessWidget {
     required this.features,
     required this.animationController,
   });
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRect(
-      child: AnimatedBuilder(
-        animation: animationController,
-        builder: (context, child) {
-          return Align(
-            heightFactor: animationController.value,
-            child: Opacity(opacity: animationController.value, child: child),
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Column(
-            children: features.map((f) => _buildFeatureItem(f)).toList(),
-          ),
-        ),
-      ),
-    );
-  }
 
   /// Builds individual feature item with check icon and text
   Widget _buildFeatureItem(String feature) {
@@ -51,6 +30,28 @@ class SubscriptionFeatureList extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRect(
+      child: AnimatedBuilder(
+        animation: animationController,
+        builder: (context, child) {
+          return Align(
+            heightFactor: animationController.value,
+            child: Opacity(opacity: animationController.value, child: child),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Column(
+            children:
+                features.map((feature) => _buildFeatureItem(feature)).toList(),
+          ),
+        ),
       ),
     );
   }

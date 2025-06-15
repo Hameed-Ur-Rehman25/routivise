@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:routivise/app/routes.dart';
 import 'package:routivise/app/theme.dart';
-import 'package:routivise/features/auth/presentation/providers/auth_provider.dart';
+import 'package:routivise/features/auth/presentation/di/auth_dependency_injector.dart';
 import 'package:routivise/features/goals_todo/presentation/di/goal_dependency_injector.dart';
 import 'package:routivise/features/food/presentation/di/meal_dependency_injector.dart';
 import 'package:routivise/features/mood_energy/presentation/providers/energy_provider.dart';
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        AuthDependencyInjector.getProvider(),
         ChangeNotifierProvider(create: (_) => MoodProvider()),
         ChangeNotifierProvider(create: (_) => EnergyProvider()),
         ChangeNotifierProvider(create: (_) => RoutineProvider()),
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: appTheme, // Ensures Poppins is the default font
-        initialRoute: AppRoutes.home,
+        initialRoute: AppRoutes.login,
         onGenerateRoute: AppRoutes.generateRoute,
         debugShowCheckedModeBanner: false,
       ),

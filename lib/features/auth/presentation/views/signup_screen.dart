@@ -30,100 +30,216 @@ class _SignupScreenState extends State<SignupScreen> {
 
   void _handleSignup() {
     if (_formKey.currentState!.validate()) {
-      // Navigate to home screen on signup
       Navigator.pushReplacementNamed(context, AppRoutes.home);
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // Get screen dimensions for responsive layout
+  Widget _buildTextField({
+    required String label,
+    required TextEditingController controller,
+    required String hintText,
+    required String? Function(String?) validator,
+    bool obscureText = false,
+    VoidCallback? toggleObscure,
+    EdgeInsets? contentPadding,
+    Widget? suffixIcon,
+    TextInputType? keyboardType,
+  }) {
     final Size screenSize = MediaQuery.of(context).size;
     final bool isSmallScreen = screenSize.width < 360;
-    
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          'Sign Up',
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
           style: TextStyle(
+            fontSize: isSmallScreen ? 14 : 16,
+            fontWeight: FontWeight.w500,
             color: AppColors.textPrimary,
-            fontWeight: FontWeight.w600,
-            fontSize: isSmallScreen ? 18 : 20,
           ),
         ),
+        SizedBox(height: screenSize.height * 0.01),
+        TextFormField(
+          controller: controller,
+          obscureText: obscureText,
+          keyboardType: keyboardType,
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: TextStyle(
+              color: AppColors.textSecondary,
+              fontSize: isSmallScreen ? 14 : 16,
+            ),
+            contentPadding:
+                contentPadding ?? EdgeInsets.all(isSmallScreen ? 14 : 16),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: BorderSide.none,
+            ),
+            filled: true,
+            fillColor: Colors.grey[100],
+            suffixIcon: suffixIcon,
+          ),
+          validator: validator,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPasswordField({
+    required String label,
+    required TextEditingController controller,
+    required bool obscureText,
+    required VoidCallback toggleObscure,
+    required String? Function(String?) validator,
+  }) {
+    return _buildTextField(
+      label: label,
+      controller: controller,
+      hintText: '••••••••••••••••••••',
+
+      obscureText: obscureText,
+      toggleObscure: toggleObscure,
+      validator: validator,
+      suffixIcon: IconButton(
+        icon: Icon(
+          obscureText
+              ? Icons.visibility_off_outlined
+              : Icons.visibility_outlined,
+          color: AppColors.textSecondary,
+        ),
+        onPressed: toggleObscure,
       ),
+    );
+  }
+
+  Widget _buildSocialButtons() {
+    return Column(
+      children: [
+        SocialSignInButton(
+          icon: 'assets/images/google_logo.png',
+          text: 'Continue with Google',
+          backgroundColor: const Color(0xFF4285F4),
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, AppRoutes.home);
+          },
+        ),
+        const SizedBox(height: 16),
+        SocialSignInButton(
+          icon: 'assets/images/facebook_logo.png',
+          text: 'Continue with Facebook',
+          backgroundColor: Colors.white,
+          textColor: AppColors.textPrimary,
+          borderColor: Colors.grey[300],
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, AppRoutes.home);
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildOrDivider() {
+    return const Row(
+      children: [
+        Expanded(
+          child: Divider(
+            color: AppColors.textSecondary,
+            thickness: 1.0,
+            endIndent: 8.0,
+            indent: 8.0,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          child: Text('or', style: TextStyle(color: AppColors.textSecondary)),
+        ),
+        Expanded(
+          child: Divider(
+            color: AppColors.textSecondary,
+            thickness: 1.0,
+            endIndent: 8.0,
+            indent: 8.0,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDescription() {
+    return Center(
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: const TextSpan(
+          style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
+          children: [
+            TextSpan(
+              text: 'Routivise ',
+              style: TextStyle(
+                color: AppColors.primary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            TextSpan(
+              text:
+                  'helps you organize tasks and follow through with your goals, short term and long term!',
+              style: TextStyle(color: AppColors.textSecondary),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final bool isSmallScreen = screenSize.width < 360;
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(
-            horizontal: screenSize.width * 0.06, // 6% of screen width
-            vertical: screenSize.height * 0.02, // 2% of screen height
+            horizontal: screenSize.width * 0.06,
+            vertical: screenSize.height * 0.02,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: screenSize.height * 0.02),
-              // App description text
-              Center(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: AppColors.textSecondary,
+              // Custom header with back button and title
+              Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: AppColors.textPrimary,
                     ),
-                    children: [
-                      const TextSpan(
-                        text: 'Routivise ',
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'helps you organize tasks and follow through with your goals, short term and long term!',
-                        style: TextStyle(
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
+                    onPressed: () => Navigator.pop(context),
                   ),
-                ),
+                  Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      color: AppColors.textPrimary,
+                      fontWeight: FontWeight.w600,
+                      fontSize: isSmallScreen ? 18 : 20,
+                    ),
+                  ),
+                ],
               ),
+              SizedBox(height: screenSize.height * 0.02),
+              _buildDescription(),
               const SizedBox(height: 30),
               Form(
                 key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Name Field
-                    Text(
-                      'Name:',
-                      style: TextStyle(
-                        fontSize: isSmallScreen ? 14 : 16,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
-                    SizedBox(height: screenSize.height * 0.01),
-                    TextFormField(
+                    _buildTextField(
+                      label: 'Name:',
                       controller: _nameController,
-                      decoration: InputDecoration(
-                        hintText: 'John Doe',
-                        contentPadding: EdgeInsets.all(isSmallScreen ? 14 : 16),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide.none,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                      ),
+                      hintText: 'John Doe',
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your name';
@@ -131,32 +247,12 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
-                    
                     SizedBox(height: screenSize.height * 0.025),
-                    
-                    // Email Field
-                    Text(
-                      'Email:',
-                      style: TextStyle(
-                        fontSize: isSmallScreen ? 14 : 16,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
-                    SizedBox(height: screenSize.height * 0.01),
-                    TextFormField(
+                    _buildTextField(
+                      label: 'Email:',
                       controller: _emailController,
+                      hintText: 'johndoe@gmail.com',
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: 'johndoe@gmail.com',
-                        contentPadding: EdgeInsets.all(isSmallScreen ? 14 : 16),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide.none,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                      ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email';
@@ -167,45 +263,16 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
-                    
                     SizedBox(height: screenSize.height * 0.025),
-                    
-                    // Password Field
-                    Text(
-                      'Password:',
-                      style: TextStyle(
-                        fontSize: isSmallScreen ? 14 : 16,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
-                    SizedBox(height: screenSize.height * 0.01),
-                    TextFormField(
+                    _buildPasswordField(
+                      label: 'Password:',
                       controller: _passwordController,
                       obscureText: _obscurePassword,
-                      decoration: InputDecoration(
-                        hintText: '••••••••••••••••••••',
-                        contentPadding: EdgeInsets.all(isSmallScreen ? 14 : 16),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide.none,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscurePassword
-                                ? Icons.visibility_off_outlined
-                                : Icons.visibility_outlined,
-                            color: AppColors.textSecondary,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _obscurePassword = !_obscurePassword;
-                            });
-                          },
-                        ),
-                      ),
+                      toggleObscure: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your password';
@@ -216,45 +283,16 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
-                    
                     const SizedBox(height: 20),
-                    
-                    // Confirm Password Field
-                    Text(
-                      'Re-enter Password:',
-                      style: TextStyle(
-                        fontSize: isSmallScreen ? 14 : 16,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
-                    SizedBox(height: screenSize.height * 0.01),
-                    TextFormField(
+                    _buildPasswordField(
+                      label: 'Re-enter Password:',
                       controller: _confirmPasswordController,
                       obscureText: _obscureConfirmPassword,
-                      decoration: InputDecoration(
-                        hintText: '••••••••••••••••••••',
-                        contentPadding: const EdgeInsets.all(16),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide.none,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscureConfirmPassword
-                                ? Icons.visibility_off_outlined
-                                : Icons.visibility_outlined,
-                            color: AppColors.textSecondary,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _obscureConfirmPassword = !_obscureConfirmPassword;
-                            });
-                          },
-                        ),
-                      ),
+                      toggleObscure: () {
+                        setState(() {
+                          _obscureConfirmPassword = !_obscureConfirmPassword;
+                        });
+                      },
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please confirm your password';
@@ -265,10 +303,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
-                    
                     const SizedBox(height: 30),
-                    
-                    // Signup Button
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -290,53 +325,10 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       ),
                     ),
-                    
                     const SizedBox(height: 20),
-                    
-                    // Or divider
-                    const Row(
-                      children: [
-                        Expanded(child: Divider()),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.0),
-                          child: Text(
-                            'or',
-                            style: TextStyle(
-                              color: AppColors.textSecondary,
-                            ),
-                          ),
-                        ),
-                        Expanded(child: Divider()),
-                      ],
-                    ),
-                    
+                    _buildOrDivider(),
                     const SizedBox(height: 20),
-                    
-                    // Social Sign In Buttons
-                    SocialSignInButton(
-                      icon: 'assets/images/google_logo.png',
-                      text: 'Continue with Google',
-                      backgroundColor: const Color(0xFF4285F4),
-                      textColor: Colors.white,
-                      onPressed: () {
-                        // Navigate to home screen for now
-                        Navigator.pushReplacementNamed(context, AppRoutes.home);
-                      },
-                    ),
-                    
-                    const SizedBox(height: 16),
-                    
-                    SocialSignInButton(
-                      icon: 'assets/images/facebook_logo.png',
-                      text: 'Continue with Facebook',
-                      backgroundColor: Colors.white,
-                      textColor: AppColors.textPrimary,
-                      borderColor: Colors.grey[300],
-                      onPressed: () {
-                        // Navigate to home screen for now
-                        Navigator.pushReplacementNamed(context, AppRoutes.home);
-                      },
-                    ),
+                    _buildSocialButtons(),
                   ],
                 ),
               ),
